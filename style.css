@@ -4,7 +4,7 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(15deg, darkslategray, black);
+  background: #0C192B;
   color: #000;
   overflow-x: hidden;
 
@@ -32,6 +32,10 @@ a:hover{
 
 
 /* Nav Bar */
+.navbar{
+  background-color: #264B7E;
+}
+
 .navbar ul li a{
   display: block;
   font-family: 'Poppins', sans-serif;
@@ -120,6 +124,10 @@ a:hover{
   text-decoration: none;
 }
 
+.footer-content{
+  background-color: #264B7E;
+}
+
 .footer-content h5{
   color: white;
   font-weight: 900;
@@ -128,6 +136,11 @@ a:hover{
 .social-links{
   font-size: 3rem;
 }
+
+#game-output{
+  margin-top: 6rem;
+}
+
 
 
 @keyframes change{
