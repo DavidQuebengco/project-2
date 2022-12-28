@@ -33,7 +33,7 @@ a:hover{
 
 /* Nav Bar */
 .navbar{
-  background-color: #264B7E;
+  background-color: rgba(38, 75, 126, 0.5);
 }
 
 .navbar ul li a{
