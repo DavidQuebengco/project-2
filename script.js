@@ -27,17 +27,17 @@ async function displayGames() {
 
   for (const game of games) {
     const card = `
-    <div class="col-md-3 mt-2 text-white">
+    <div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
       <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
         <div>
         <img class = "my-2 p-1 border border-2 rounded img-fluid" src = ${game.thumbnail}>
         </div>
         <div class="card-body"> 
-            <div class="card-title text-center px-3 pt-3">
+            <div class="card-title text-center px-3 pt-3 fw-bold">
             ${game.title}
             </div>
             <div>
-            <p class="card-text text-start text-break">${game.short_description}</p> 
+            <p class="card-text text-start">${game.short_description}</p> 
             </div>
               <hr>
             <div>                          
@@ -54,6 +54,8 @@ async function displayGames() {
     document.getElementById('game-output').innerHTML += card;
   }
 }
+
+
 
 // Add a pagination component to the page
 const pagination = document.getElementById('page-section');
