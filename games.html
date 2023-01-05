@@ -69,23 +69,21 @@
       </nav>
       <!--Nav Bar End-->
 
-      <div class="row py-5 mt-5">
-        <h1 class="text-white fw-bold text-center pb-4">GAME LIST</h1>
+      <div class="row pt-5 mt-5">
+        <h1 class="text-white fw-bold text-center pb-0">GAME LIST</h1>
       </div>
       <div class="container">
-       
+
         <div class="row text-center ms-3 me-3" id="game-output">
-  
+
         </div>
-  
-        <div>
-          <ul id="page-section" class="pagination d-flex justify-content-center mt-5">
-            <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
-            <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>
-            </ul>
+        <div id="page-section" class="pagination d-flex justify-content-center mt-5">
+          <button id="prev" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
+          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
+          <button id="next" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
         </div>
       </div>
-      
+
 
 
 
@@ -132,7 +130,7 @@
 
 
       <script src="script.js">
-        
+
       </script>
       <!--Footer End-->
 

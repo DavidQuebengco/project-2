@@ -13,6 +13,9 @@ let maxArr = 11;
 
 let page = 1; // initialize page to 1
 let gamesPerPage = 12; // number of games to display per page
+let pageCount = 0;
+let curPage = 1;
+console.log(pageCount)
 
 async function getGames(page, gamesPerPage) {
   const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical&page=${page}&gamesPerPage=${gamesPerPage}`, options);
@@ -23,7 +26,7 @@ async function getGames(page, gamesPerPage) {
 async function displayGames() {
   let games = await getGames(page, gamesPerPage);
   for (const game of games) {
-
+    pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : false ;
     if (curArr <= maxArr) {
       const card = `
     <div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
@@ -51,13 +54,14 @@ async function displayGames() {
     </div>
     `;
       document.getElementById('game-output').innerHTML += card;
-      document.getElementById("page-section").innerHTML = `
-      <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+      document.getElementById("prev").setAttribute ('disabled',0);
+      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
       curArr += 1;
     }
   }
   games2 = games;
 }
+
 
 
 const card2 = () => {
@@ -88,6 +92,7 @@ const card2 = () => {
 ;
 
 const nextPage = () => {
+  curPage += 1;
   minArr += 12;
   maxArr += 12;
   curArr = minArr
@@ -96,35 +101,34 @@ const nextPage = () => {
   for (curArr; curArr <= maxArr; curArr++) {
     if (curArr <= maxArr && curArr <= games2.length - 1) {
       card2();
-      document.getElementById("page-section").innerHTML = `
-              <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
-              <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+      document.getElementById("prev").removeAttribute("disabled");
+      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      console.log(curPage);
     }
     else {
-      document.getElementById("page-section").innerHTML = `
-                <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>`
+      document.getElementById("next").setAttribute (`disabled`, 0);
     };
   }
 }
 
 const prevPage = () => {
+  curPage -= 1;
   minArr -= 12;
   maxArr -= 12;
   curArr = minArr
   document.getElementById("game-output").innerHTML = "";
-  console.log(curArr);
-    for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
-      if (minArr == 0 && maxArr == 11) {
+  for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
+    if (minArr == 0 && maxArr == 11) {
       card2();
-      document.getElementById("page-section").innerHTML = `<li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
-      }
-      else{
-      card2();
-      document.getElementById("page-section").innerHTML = `
-      <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
-      <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
-      }
+      document.getElementById("prev").setAttribute (`disabled`, 0);
     }
+    else {
+      card2();
+      document.getElementById("next").removeAttribute("disabled");
+      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      console.log(curPage);
+    }
+  }
 }
 
 
