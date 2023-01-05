@@ -18,15 +18,14 @@ async function getGames(page, gamesPerPage) {
 async function displayGames() {
   let games = await getGames(page, gamesPerPage);
 
-  if (games.length === 1) {
-    return;
-  }
-
   // Clear the game output element
   document.getElementById('game-output').innerHTML = '';
 
+
   for (const game of games) {
-    const card = `
+
+    if (curArr <= maxArr) {
+      const card = `
     <div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
       <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
         <div>
@@ -51,48 +50,102 @@ async function displayGames() {
       </div>
     </div>
     `;
-    document.getElementById('game-output').innerHTML += card;
+      document.getElementById('game-output').innerHTML += card;
+      document.getElementById("page-section").innerHTML = `
+      <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+      curArr += 1;
+    }
+  }
+  games2 = games;
+}
+
+let games2 = [];
+let curArr = 0;
+let minArr = 0;
+let maxArr = 11;
+const card2 = () => {
+  document.getElementById('game-output').innerHTML += `<div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
+  <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
+    <div>
+    <img class = "my-2 p-1 border border-2 rounded img-fluid" src = ${games2[curArr].thumbnail}>
+    </div>
+    <div class="card-body"> 
+        <div class="card-title text-center px-3 pt-3 fw-bold">
+        ${games2[curArr].title}
+        </div>
+        <div>
+        <p class="card-text text-start">${games2[curArr].short_description}</p> 
+        </div>
+          <hr>
+        <div>                          
+        <p class="card-text text-start"><span>Genre :</span> ${games2[curArr].genre}</p>
+        </div>
+        <div class="text-start">
+        <a href ="${games2[curArr].freetogame_profile_url}">For more Game details here</a>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>`
+};
+;
+
+const nextPage = () => {
+  minArr += 12;
+  maxArr += 12;
+  curArr = minArr
+  document.getElementById("game-output").innerHTML = "";
+
+  for (curArr; curArr <= maxArr; curArr++) {
+    if (curArr <= maxArr && curArr <= games2.length - 1) {
+      card2();
+      document.getElementById("page-section").innerHTML = `
+              <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
+              <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+    }
+    else {
+      curArr = games2.length - (games2.length % 12) - 1;
+      maxArr = games2.length - 1;
+      card2();
+      document.getElementById("game-output").innerHTML = ""
+      document.getElementById("page-section").innerHTML = `
+                <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>`
+    };
   }
 }
 
-
-
-// Add a pagination component to the page
-const pagination = document.getElementById('page-section');
-pagination.innerHTML = `
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li id="prev-page" class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li id="next-page" class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-`;
-document.body.appendChild(pagination);
-
-// Add event listeners for the pagination buttons
-document.getElementById('prev-page').addEventListener('click', () => {
-  page--;
-  displayGames();
-  updatePagination();
-});
-document.getElementById('next-page').addEventListener('click', () => {
-  page++;
-  displayGames();
-  updatePagination();
-});
-
-function updatePagination() {
-  // Update the page number displayed in the pagination component
-  document.getElementById('page-num').textContent
-
-  if (page === 1) {
-    document.getElementById('prev-page').disabled = true;
+const prevPage = () => {
+  minArr -= 12;
+  maxArr -= 12;
+  curArr = minArr
+  document.getElementById("game-output").innerHTML = "";
+  if (curArr >= 0) {
+    for (curArr; curArr <= maxArr; curArr++) {
+      card2();
+      document.getElementById("page-section").innerHTML = `<li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
+                <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+      console.log(curArr)
+    }
+    console.log(games2[curArr])
+    console.log("minArr" + minArr)
+    console.log("maxArr" + maxArr)
+    // else{
+    //   curArr = games2.length - (games2.length % 12) -1;
+    //   maxArr = games2.length -1;
+    //   document.getElementById('game-output').innerHTML = card;
+    //   document.getElementById("page-section").innerHTML = `<ul class="pagination">
+    //             <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
+    //             </ul>`
+    // };
   } else {
-    document.getElementById('prev-page').disabled = false;
+    minArr = 0;
+    maxArr = 11;
+    curArr = 0;
+    card2();
+    document.getElementById("page-section").innerHTML = `
+      <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
   }
 }
+
 
 displayGames();
