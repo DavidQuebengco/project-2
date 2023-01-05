@@ -6,8 +6,13 @@ const options = {
   }
 };
 
+let games2 = [];
+let curArr = 0;
+let minArr = 0;
+let maxArr = 11;
+
 let page = 1; // initialize page to 1
-let gamesPerPage = 10; // number of games to display per page
+let gamesPerPage = 12; // number of games to display per page
 
 async function getGames(page, gamesPerPage) {
   const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical&page=${page}&gamesPerPage=${gamesPerPage}`, options);
@@ -17,11 +22,6 @@ async function getGames(page, gamesPerPage) {
 
 async function displayGames() {
   let games = await getGames(page, gamesPerPage);
-
-  // Clear the game output element
-  document.getElementById('game-output').innerHTML = '';
-
-
   for (const game of games) {
 
     if (curArr <= maxArr) {
@@ -59,10 +59,7 @@ async function displayGames() {
   games2 = games;
 }
 
-let games2 = [];
-let curArr = 0;
-let minArr = 0;
-let maxArr = 11;
+
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `<div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
   <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
@@ -104,10 +101,6 @@ const nextPage = () => {
               <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
     }
     else {
-      curArr = games2.length - (games2.length % 12) - 1;
-      maxArr = games2.length - 1;
-      card2();
-      document.getElementById("game-output").innerHTML = ""
       document.getElementById("page-section").innerHTML = `
                 <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>`
     };
@@ -119,32 +112,19 @@ const prevPage = () => {
   maxArr -= 12;
   curArr = minArr
   document.getElementById("game-output").innerHTML = "";
-  if (curArr >= 0) {
-    for (curArr; curArr <= maxArr; curArr++) {
+  console.log(curArr);
+    for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
+      if (minArr == 0 && maxArr == 11) {
       card2();
-      document.getElementById("page-section").innerHTML = `<li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
-                <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
-      console.log(curArr)
-    }
-    console.log(games2[curArr])
-    console.log("minArr" + minArr)
-    console.log("maxArr" + maxArr)
-    // else{
-    //   curArr = games2.length - (games2.length % 12) -1;
-    //   maxArr = games2.length -1;
-    //   document.getElementById('game-output').innerHTML = card;
-    //   document.getElementById("page-section").innerHTML = `<ul class="pagination">
-    //             <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
-    //             </ul>`
-    // };
-  } else {
-    minArr = 0;
-    maxArr = 11;
-    curArr = 0;
-    card2();
-    document.getElementById("page-section").innerHTML = `
+      document.getElementById("page-section").innerHTML = `<li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
+      }
+      else{
+      card2();
+      document.getElementById("page-section").innerHTML = `
+      <li class="page-item"><a class="page-link" onclick="prevPage()">Previous</a></li>
       <li class="page-item"><a class="page-link" onclick="nextPage()">Next</a></li>`
-  }
+      }
+    }
 }
 
 
