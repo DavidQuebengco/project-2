@@ -69,6 +69,10 @@ a:hover{
   color: white;
 }
 
+.activePage{
+  color: white !important;
+  border-bottom: white !important;
+}
 
 /* Trend Section */
 .trend-section span{
