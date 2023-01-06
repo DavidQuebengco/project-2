@@ -32,9 +32,10 @@ async function displayGames() {
     <div class="col-3 card-group p-2">
       <div class="card">
         <img src=${game.thumbnail} class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body d-grid">
           <h5 class="card-title fw-bold">${game.title}</h5>
-          <small class="card-text">${game.short_description}</small>
+          <small class="card-text">${game.short_description}</small><br>
+          <p class="card-text">Genre: ${game.genre}</p>
         </div>
         <div class="card-footer">
           <a href="${game.freetogame_profile_url}">See more details</a>
@@ -57,9 +58,10 @@ const card2 = () => {
   <div class="col-3 card-group p-2">
     <div class="card">
       <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body d-grid">
         <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
-        <small class="card-text">${games2[curArr].short_description}</small>
+        <small class="card-text">${games2[curArr].short_description}</small><br>                         
+        <p class="card-text">Genre: ${games2[curArr].genre}</p>
       </div>
       <div class="card-footer">
       <a href="${games2[curArr].freetogame_profile_url}">See more details</a>
