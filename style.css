@@ -26,7 +26,7 @@ a{
 }
 
 a:hover{
-  color: #f7cda7  !important;
+  color: #ffffff  !important;
 }
 
 .leftMainPage{
@@ -78,6 +78,7 @@ background-color: chocolate;
 }
 .btn-bg:hover{
   background-color: white;
+  color: chocolate !important;
   }
 
 .banner-content{

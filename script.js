@@ -15,7 +15,6 @@ let page = 1; // initialize page to 1
 let gamesPerPage = 12; // number of games to display per page
 let pageCount = 0;
 let curPage = 1;
-console.log(pageCount)
 
 async function getGames(page, gamesPerPage) {
   const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical&page=${page}&gamesPerPage=${gamesPerPage}`, options);
@@ -52,6 +51,22 @@ async function displayGames() {
   }
   games2 = games;
 }
+
+const genreList = ['ARPG','Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
+  'MOBA', 'Racing', 'Shooter', 'Social', 'Sports', 'Strategy'];
+
+let genreValue = "";
+
+const genreDropdown = () => {
+  
+  for(let genreNumber = 0; genreNumber < genreList.length ; genreNumber++){
+    genreValue = genreList[genreNumber];
+    document.getElementById('sample').innerHTML += `<li><a class="dropdown-item" onclick="selectGenre('${genreValue}')">${genreValue}</a></li>`;
+  }
+  
+}
+console.log(genreValue);
+genreDropdown();
 
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `
@@ -123,3 +138,20 @@ const prevPage = () => {
   }
 }
 displayGames();
+
+const selectGenre = (genreChoice) => {
+    document.getElementById("game-output").innerHTML = "";
+    curArr = 0;
+    minArr = 0;
+    let sortMinCounter = 0;
+    let sortMaxCounter = 11;
+    for (curArr; curArr <= games2.length; curArr++) {
+      if (games2[curArr].genre == genreChoice) {
+        card2();
+        sortMinCounter += 1;
+      }
+    }
+  }
+
+
+
