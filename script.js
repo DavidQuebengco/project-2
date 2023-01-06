@@ -15,6 +15,7 @@ let page = 1; // initialize page to 1
 let gamesPerPage = 12; // number of games to display per page
 let pageCount = 0;
 let curPage = 1;
+console.log(pageCount)
 
 async function getGames(page, gamesPerPage) {
   const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical&page=${page}&gamesPerPage=${gamesPerPage}`, options);
@@ -27,34 +28,24 @@ async function displayGames() {
   for (const game of games) {
     pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : false;
     if (curArr <= maxArr) {
-      const card = `
-    <div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
-      <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
-        <div>
-        <img class = "my-2 p-1 border border-2 rounded img-fluid" src = ${game.thumbnail}>
+      const cardSample = `
+    <div class="col-3 card-group p-2">
+      <div class="card">
+        <img src=${game.thumbnail} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">${game.title}</h5>
+          <small class="card-text">${game.short_description}</small>
         </div>
-        <div class="card-body"> 
-            <div class="card-title text-center px-3 pt-3 fw-bold">
-            ${game.title}
-            </div>
-            <div>
-            <p class="card-text text-start">${game.short_description}</p> 
-            </div>
-              <hr>
-            <div>                          
-            <p class="card-text text-start"><span>Genre :</span> ${game.genre}</p>
-            </div>
-            <div class="text-start">
-            <a href ="${game.freetogame_profile_url}">For more Game details here</a>
-            </div>
-          </div>
-        </div> 
+        <div class="card-footer">
+          <a href="${game.freetogame_profile_url}">See more details</a>
+        </div>
       </div>
-    </div>
-    `;
-      document.getElementById('game-output').innerHTML += card;
+    </div>`;
+      document.getElementById('game-output').innerHTML += cardSample;
       document.getElementById("prev").setAttribute('disabled', 0);
-      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      document.getElementById("prevTop").setAttribute('disabled', 0);
+      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`;
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`;
       curArr += 1;
     }
   }
@@ -62,51 +53,51 @@ async function displayGames() {
 }
 
 const card2 = () => {
-  document.getElementById('game-output').innerHTML += `<div class="col-md-3 mt-2 text-white" style="max-width: 100%;">
-  <div class="card mb-3 px-5 bg-black" style="max-width: 40rem; height: 30rem;">
-    <div>
-    <img class = "my-2 p-1 border border-2 rounded img-fluid" src = ${games2[curArr].thumbnail}>
-    </div>
-    <div class="card-body"> 
-        <div class="card-title text-center px-3 pt-3 fw-bold">
-        ${games2[curArr].title}
-        </div>
-        <div>
-        <p class="card-text text-start">${games2[curArr].short_description}</p> 
-        </div>
-          <hr>
-        <div>                          
-        <p class="card-text text-start"><span>Genre :</span> ${games2[curArr].genre}</p>
-        </div>
-        <div class="text-start">
-        <a href ="${games2[curArr].freetogame_profile_url}">For more Game details here</a>
-        </div>
+  document.getElementById('game-output').innerHTML += `
+  <div class="col-3 card-group p-2">
+    <div class="card">
+      <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
+        <small class="card-text">${games2[curArr].short_description}</small>
       </div>
-    </div> 
-  </div>
-</div>`
+      <div class="card-footer">
+      <a href="${games2[curArr].freetogame_profile_url}">See more details</a>
+      </div>
+    </div>
+  </div>`
 };
 ;
 
 const nextPage = () => {
+  scrollToTop()
   curPage += 1;
   minArr += 12;
   maxArr += 12;
   curArr = minArr
   document.getElementById("game-output").innerHTML = "";
+
   for (curArr; curArr <= maxArr; curArr++) {
     if (curArr <= maxArr && curArr <= games2.length - 1) {
       card2();
       document.getElementById("prev").removeAttribute("disabled");
+      document.getElementById("prevTop").removeAttribute("disabled");
       document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
     else {
       document.getElementById("next").setAttribute(`disabled`, 0);
+      document.getElementById("nextTop").setAttribute(`disabled`, 0);
     };
   }
 }
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 const prevPage = () => {
+  scrollToTop()
   curPage -= 1;
   minArr -= 12;
   maxArr -= 12;
@@ -116,14 +107,17 @@ const prevPage = () => {
     if (minArr == 0 && maxArr == 11) {
       card2();
       document.getElementById("prev").setAttribute(`disabled`, 0);
+      document.getElementById("prevTop").setAttribute(`disabled`, 0);
       document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
     else {
       card2();
       document.getElementById("next").removeAttribute("disabled");
+      document.getElementById("nextTop").removeAttribute("disabled");
       document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
   }
 }
-
 displayGames();
