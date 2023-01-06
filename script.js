@@ -45,6 +45,7 @@ async function displayGames() {
             </div>
             <div class="text-start">
             <a href ="${game.freetogame_profile_url}">For more Game details here</a>
+            <a href="#" class="stretched-link"></a>
             </div>
           </div>
         </div> 
@@ -96,3 +97,11 @@ function updatePagination() {
 }
 
 displayGames();
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction(){
+  
+}
