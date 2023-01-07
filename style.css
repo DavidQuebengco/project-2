@@ -69,6 +69,26 @@ a:hover{
   color: white;
 }
 
+.about{
+  text-align: justify;
+  color: rgb(224, 104, 49);
+
+}
+
+.secondcontent{
+  text-align: justify;
+  color: rgb(224, 104, 49);
+}
+
+.linespace{
+  line-height: 1.5;
+}
+
+.missionvision{
+  text-align: justify;
+  color: rgb(224, 104, 49);
+}
+
 
 /* Trend Section */
 .trend-section span{
@@ -117,6 +137,8 @@ a:hover{
   font-size: 1.5em;
   color: chocolate;
 }
+
+
 
 
 /* Footer Section */
