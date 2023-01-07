@@ -1,10 +1,14 @@
 /* General CSS */
 body{
+  background-image: url('https://i.ibb.co/F8LSpBf/Background-Image-Main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Titillium Web', sans-serif;
-  background: #0C192B;
+  /* background: #0C192B; */
   color: #000;
   overflow-x: hidden;
 
@@ -50,6 +54,10 @@ a:hover{
 .navbar{
   border-color: #d1691f !important;
   background-color: #0C192B;
+}
+
+.border-top{
+  border-color: #d1691f !important;
 }
 
 .navbar ul li a{
@@ -132,7 +140,14 @@ background-color: chocolate;
 }
 
 .gameRank2{
-  background-color: #264B7E;
+  /* background-color: #264B7E; */
+  background: linear-gradient(
+        to bottom,
+        #264B7E 0%,
+        #264B7E 90%,
+        #264b7e4f 90%,
+        #264b7e4f 100%
+    )
 }
 
 

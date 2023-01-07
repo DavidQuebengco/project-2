@@ -54,24 +54,20 @@ async function displayGames() {
 
 const genreList = ['ARPG','Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
   'MOBA', 'Racing', 'Shooter', 'Social', 'Sports', 'Strategy'];
-
 let genreValue = "";
 
 const genreDropdown = () => {
-  
   for(let genreNumber = 0; genreNumber < genreList.length ; genreNumber++){
     genreValue = genreList[genreNumber];
     document.getElementById('sample').innerHTML += `<li><a class="dropdown-item" onclick="selectGenre('${genreValue}')">${genreValue}</a></li>`;
-  }
-  
-}
-console.log(genreValue);
+  }}
+
 genreDropdown();
 
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `
   <div class="col-3 card-group p-2">
-    <div class="card">
+    <div class="card shadow">
       <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
       <div class="card-body d-grid">
         <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
@@ -84,7 +80,6 @@ const card2 = () => {
     </div>
   </div>`
 };
-;
 
 const nextPage = () => {
   scrollToTop()
@@ -152,6 +147,5 @@ const selectGenre = (genreChoice) => {
       }
     }
   }
-
 
 
