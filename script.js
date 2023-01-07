@@ -29,7 +29,7 @@ async function displayGames() {
     if (curArr <= maxArr) {
       const cardSample = `
     <div class="col-3 card-group p-2">
-      <div class="card">
+      <div class="card text-bg-dark shadow">
         <img src=${game.thumbnail} class="card-img-top" alt="...">
         <div class="card-body d-grid">
           <h5 class="card-title fw-bold">${game.title}</h5>
@@ -67,7 +67,7 @@ genreDropdown();
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `
   <div class="col-3 card-group p-2">
-    <div class="card shadow">
+    <div class="card text-bg-dark shadow">
       <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
       <div class="card-body d-grid">
         <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
@@ -80,6 +80,8 @@ const card2 = () => {
     </div>
   </div>`
 };
+
+
 
 const nextPage = () => {
   scrollToTop()

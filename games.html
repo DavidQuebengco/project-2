@@ -34,8 +34,8 @@
 
       <!--Nav Bar Start-->
       <nav class="navbar navbar-expand-lg fixed-top border-bottom border-2">
-        <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0">
-          <a class="navbar-brand ms-5 ps-5" href="index.html">
+        <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0 p-5 ms-5 me-5">
+          <a class="navbar-brand ps-3" href="index.html">
             <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="150" alt="">
           </a>
 
@@ -72,13 +72,13 @@
         </div>
       </nav>
       <!--Nav Bar End-->
-      <div class="container">
-        <h1 class="text-center pt-5 mt-5 text-light fw-bold">
-          Game List
+      <div class="container pt-5">
+        <h1 class="orangeText text-center pt-5 m-5 mb-3 text-light fw-bold">
+          Game <span class="text-light">List</span>
         </h1>
         <div id="page-sectionTop" class="paginationTop d-flex justify-content-center">
           <button id="prevTop" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
-          <button id="pageNumberTop" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
+          <button id="pageNumberTop" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>0 of 0</button>
           <button id="nextTop" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
         </div>
         <div class="dropdown d-flex justify-content-end">
@@ -92,53 +92,65 @@
         <div class="row text-center pt-0 mt-3" id="game-output">
           
         </div>
-        <div id="page-section" class="pagination d-flex justify-content-center mt-3 mb-3">
+        
+        <div id="page-section" class="pagination d-flex justify-content-center m-5">
           <button id="prev" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
-          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
+          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>0 of 0</button>
           <button id="next" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
         </div>
       </div>
       
 
       <!--Footer Start-->
-      <div class="footer">
-        <div class="row">
-          <h3 class="text-center text-white">Get the latest news, reviews and guides?</h3>
-          <div class="col d-flex justify-content-center align-content-center">
-            <a class="btn btn-outline-light" href="" role="button">Click here to register</a>
+      <div class="container-fluid bg-secondary bg-opacity-50">
+        <div class="row align-items-center d-flex justify-content-around p-5 pt-3 pb-3 ms-5 me-5">
+          <div class="col-sm">
+            <img src="images/activision.png" alt="">
           </div>
+          <div class="col-sm">
+            <img src="images/bethesda.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/blizzard.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/capcom.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/EA.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/nintendo.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/riot.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/rockstar.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/santa-monica.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/ubisoft.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/unity.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/unreal.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img src="images/valve.png" alt="">
+          </div>
+        </div>
+        <!-- footer -->
+        <div>
           
         </div>
-        <hr>
-
-        <div class="row footer-content">
-          <div class="col-sm-4">
-            <ul>
-              <h5>About Us</h5>
-              <li><a href="">Developers</a></li>
-              <li><a href="">Contacts</a></li>
-              <li><a href="">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-4">
-            <ul>
-              <h5>Resources</h5>
-              <li><a href="">Blogs</a></li>
-              <li><a href="">News</a></li>
-              <li><a href="">Reviews</a></li>
-              <li><a href="">Guides</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-4">
-            <ul>
-              <h5>Social Media Links</h5>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-
+      </div>
+      <div class="footerCRights d-flex justify-content-center align-items-center p-2">
+        <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="75" alt=""> <small class="ps-3 text-light">© copyright 2023</small> 
       </div>
 
 

@@ -11,7 +11,9 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!--Bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -34,8 +36,8 @@
 
       <!--Nav Bar Start-->
       <nav class="navbar navbar-expand-lg fixed-top border-bottom border-2">
-        <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0">
-          <a class="navbar-brand ms-5 ps-5" href="index.html">
+        <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0 p-5 ms-5 me-5">
+          <a class="navbar-brand ps-3" href="index.html">
             <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="150" alt="">
           </a>
 
@@ -47,8 +49,8 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto me-2">
-              <li class="nav-item">
-                <a class="nav-link me-4 activePage" href="index.html">Home</a>
+              <li class="nav-item me-4">
+                <a class="nav-link  activePage" href="index.html">Home</a>
               </li>
               <li class="nav-item me-4">
                 <a class="nav-link" href="games.html">Games</a>
@@ -77,17 +79,29 @@
       <div class="banner-image w-auto vh-100 ">
         <div class="row justify-content-end">
           <div class="col-lg-10 left vh-100 leftMainPage d-flex justify-content-end">
-            <div class="col-7 text-end pt-5 pe-5">
-              <h3 class="banner-content">
+            <div class="col-7 text-end pt-5 pe-5 me-4">
+              <h4 class="banner-content pe-5 mt-5">
                 See the trending and top GAMES
-              </h3>
-              <small class="banner-desc ms-3 me-1 ">
-                Gaming Trends. <br> Hotest Reviews. <br> Epic Guides, and More
+              </h4>
+              <small class="banner-desc ms-5 ps-5 pt-0 d-grid text-center">
+                <p>Gaming Trends,  Hotest Reviews.</p>
+                <p>Epic Guides, and More</p> 
+                <div class="col-12 d-flex justify-content-center ms-3 mt-3">
+                  <button type="button" class="btn btn-bg m-5 fw-bold text-light">Featured Games</button>
+                  <button type="button" class="btn btn-bg m-5 fw-bold text-light">View All Free Games</button>
+                </div>
+                <small class="col-12 pt-3">
+                  <h2>
+                  <i class="fa-brands fa-facebook p-2"></i>
+                  <i class="fa-brands fa-twitter p-2"></i>
+                  <i class="fa-brands fa-youtube p-2"></i>
+                  <i class="fa-brands fa-discord p-2"></i>
+                  <i class="fa-brands fa-twitch p-2"></i> 
+                  </h2>
+                </small>
+                
               </small>
-              <div class="col-12 d-flex justify-content-end ms-3 mt-5">
-                <button type="button" class="btn btn-bg m-5 fw-bold text-light">Featured Games</button>
-                <button type="button" class="btn btn-bg m-5 fw-bold text-light">View All Free Games</button>
-              </div>
+              
               
             </div>
 
@@ -111,11 +125,12 @@
 
   <!--Game Ranking Start-->
   <div class="game-rank">
-    <h1 class="text-center p-5 ms-0 me-0 gameRank2 border-top border-2">Game <span class="text-light">Rankings</span></h1>
-      <h5 class="container pt-5">
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr>
+    <h1 class="text-center p-5 gameRank2 border-top border-2"><br>Game <span class="text-light">Rankings</span></h1>
+      <h5 class="container-fluid ps-5 pe-5 pb-5 col-11 d-flex justify-content-center">
+        
+        <table class="table table-dark table-hover text-center">
+          <thead class="">
+            <tr class="tableHeader">
               <th scope="col">Rank #</th>
               <th scope="col">Game Title</th>
               <th scope="col">Developer</th>
@@ -165,10 +180,9 @@
 
   </div>
   <!--Game Ranking End-->
-  <hr>
   <!--Game Dev Logos Start-->
-  <div class="d-flex justify-content-around">
-    <div class="row align-items-center" style="width: auto;">
+  <div class="container-fluid bg-secondary bg-opacity-50">
+    <div class="row align-items-center d-flex justify-content-around p-5 pt-3 pb-3 ms-5 me-5">
       <div class="col-sm">
         <img src="images/activision.png" alt="">
       </div>
@@ -209,21 +223,49 @@
         <img src="images/valve.png" alt="">
       </div>
     </div>
+    <!-- footer -->
+    <div>
+      
+    </div>
+  </div>
+  <div class="footerCRights d-flex justify-content-center align-items-center p-2">
+    <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="75" alt=""> <small class="ps-3 text-light">© copyright 2023</small> 
   </div>
   <!--Game Dev Logos End-->
-  <hr>
 
-  <!--Footer Start-->
-  <div class="footer">
+  <!-- Footer Start
+  <div class="footer ">
     <div class="row">
       <h3 class="text-center text-white">Get the latest news, reviews and guides?</h3>
       <div class="col d-flex justify-content-center align-content-center">
         <a class="btn btn-outline-light" href="" role="button">Click here to register</a>
       </div>
     </div>
-    <hr>
 
-    <div class="row footer-content">
+    <footer class="bg-secondary bg-opacity-50">
+      <div class="container d-flex pt-3 pb-3">
+        <div class="col-sm-4">
+          <ul>
+            <h5>Resources</h5>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Reviews</a></li>
+            <li><a href="">Guides</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul>
+            <h5>Social Media Links</h5>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+  
+      </div>
+    </footer> -->
+
+    <!-- <div class="row footer-content">
       <div class="col-sm-4">
         <ul>
           <h5>About Us</h5>
@@ -249,7 +291,7 @@
           <li></li>
         </ul>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
