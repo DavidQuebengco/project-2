@@ -72,25 +72,27 @@
         </div>
       </nav>
       <!--Nav Bar End-->
+      <!-- content -->
 
+
+      <div class="row py-5 mt-5">
+        <h1 class="text-white fw-bold text-center pb-4">GAME LIST</h1>
+      </div>
+
+      </div>
       <div class="container">
-        <h1 class="text-center pt-5 mt-5 text-light fw-bold">
-          Game List
-        </h1>
-        <div id="page-sectionTop" class="paginationTop d-flex justify-content-center">
-          <button id="prevTop" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
-          <button id="pageNumberTop" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
-          <button id="nextTop" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
+       
+        <div class="row text-center ms-3 me-3" id="game-output">
+  
         </div>
-        <div class="row text-center pt-0 mt-3" id="game-output">
-          
-        </div>
-        <div id="page-section" class="pagination d-flex justify-content-center mt-3 mb-3">
-          <button id="prev" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
-          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
-          <button id="next" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
+  
+        <div id="page-section">
+  
         </div>
       </div>
+      
+
+
 
       <!--Footer Start-->
       <div class="footer">
@@ -134,10 +136,39 @@
 
 
 
-      <script src="script.js">
+      <script>
+          const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': '584c938872msh5a0e1cf02a5269fp197d03jsna83433d26996',
+            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+          }
+        };
 
+        fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=racing', options)
+          .then(res => res.json())
+          .then(data => {
+
+            data.map(list => {
+              document.getElementById('game-output').innerHTML +=
+                `
+      <div class="col-md-3 mt-2 text-white">
+        <div class="card mb-3 bg-black" style="max-width: 18rem; height: 30rem;">
+                <div class="text-center px-3 pt-3">${list.title}</div>
+                  <div class="card-body">                                    
+                    <img class = " p-1 border border-1 rounded" src = ${list.thumbnail}>
+                    <p>${list.short_description}</p>                            
+                    <hr>
+                    <p>${list.genre}</p>
+                    <a href ="${list.freetogame_profile_url}">Game details here</a>
+                    </div>
+                </div> 
+          </div>
+      </div>
+      `;
+            });
+
+          })
       </script>
-      
+      <!--Footer End-->
 </body>
-
-</html>
