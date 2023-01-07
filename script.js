@@ -138,14 +138,18 @@ displayGames();
 
 const selectGenre = (genreChoice) => {
     document.getElementById("game-output").innerHTML = "";
+    
     curArr = 0;
     minArr = 0;
     let sortMinCounter = 0;
     let sortMaxCounter = 11;
+    let sortCounter = 0;
+    document.getElementById("genreBtn").innerText = genreChoice;
     for (curArr; curArr <= games2.length; curArr++) {
       if (games2[curArr].genre == genreChoice) {
         card2();
-        sortMinCounter += 1;
+        sortCounter += 1;
+        document.getElementById("foundMatch").innerText = `Found ${sortCounter} games for ${genreChoice} Genre`;
       }
     }
   }
