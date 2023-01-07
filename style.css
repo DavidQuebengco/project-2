@@ -52,7 +52,7 @@ a:hover{
 
 /* Nav Bar */
 .navbar{
-  border-color: #d1691f !important;
+  border-color:  #d1691f !important;
   background-color: #0C192B;
 }
 
@@ -63,8 +63,7 @@ a:hover{
 .navbar ul li a{
   display: block;
   font-family: 'Poppins', sans-serif;
-  font-size: 1em;
-  font-weight: 900;
+
   letter-spacing: 1px;
   color: chocolate;
 }
@@ -100,8 +99,23 @@ background-color: chocolate;
   color: white;
 }
 
+.hr2{
+  height:3px;
+  border-width:0;
+  /* color:chocolate;
+  background-color:chocolate */
+  background: linear-gradient(
+        120deg,
+        rgba(255, 0, 0, 0) 0%,
+        #d1691fb0 15%,
+        #d1691fb0 85%,
+        rgba(255, 0, 0, 0) 100%
+  );
+}
+
 .activePage{
   color: white !important;
+  font-weight: 700;
   border-bottom: white !important;
 }
 
@@ -148,17 +162,6 @@ background-color: chocolate;
 .game-rank h1{
   color: chocolate;
 }
-
-/* .gameRank2{
-  
-  background: linear-gradient(
-        to bottom,
-        #0C192B 0%,
-        #0C192B 90%,
-        #264b7e4f 90%,
-        #264b7e4f 100%
-    )
-} */
 
 
 /* Footer Section */
