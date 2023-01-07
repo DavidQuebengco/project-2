@@ -125,7 +125,7 @@
 
   <!--Game Ranking Start-->
   <div class="game-rank">
-    <h1 class="text-center p-5 gameRank2 border-top border-2"><br>Game <span class="text-light">Rankings</span></h1>
+    <h1 class="text-center p-5 gameRank2 border-top border-2"><span><img class="mb-3" src="https://i.ibb.co/Ybyzj0Z/GGNext-Logo-white2.png" width="100" alt=""></span><br>Game <span class="text-light">Rankings</span></h1>
       <h5 class="container-fluid ps-5 pe-5 pb-5 col-11 d-flex justify-content-center">
         
         <table class="table table-dark table-hover text-center">
@@ -223,108 +223,30 @@
         <img src="images/valve.png" alt="">
       </div>
     </div>
-    <!-- footer -->
-    <div>
-      
+    
+    <div class="container-fluid">
+      <small class="col-6 orangeText fw-bold d-flex ps-5 ms-2">
+        <div class="p-5">INFORMATION</div>
+        <div class="p-5">SOCMED</div>
+        <div class="p-5">SUBSCRIBE</div>
+      </small>
+      <section class="row">
+        <header>
+          information
+        </header>
+      </section>
+
+      </section>
     </div>
   </div>
-  <div class="footerCRights d-flex justify-content-center align-items-center p-2">
+  <div class="footerCRights d-flex justify-content-center align-items-center p-3">
     <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="55" alt=""> <small class="ps-3 text-secondary"> <span class="orangeText">©</span> copyright 2023</small> 
   </div>
-  <!--Game Dev Logos End-->
-
-  <!-- Footer Start
-  <div class="footer ">
-    <div class="row">
-      <h3 class="text-center text-white">Get the latest news, reviews and guides?</h3>
-      <div class="col d-flex justify-content-center align-content-center">
-        <a class="btn btn-outline-light" href="" role="button">Click here to register</a>
-      </div>
-    </div>
-
-    <footer class="bg-secondary bg-opacity-50">
-      <div class="container d-flex pt-3 pb-3">
-        <div class="col-sm-4">
-          <ul>
-            <h5>Resources</h5>
-            <li><a href="">Blogs</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Reviews</a></li>
-            <li><a href="">Guides</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-4">
-          <ul>
-            <h5>Social Media Links</h5>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-  
-      </div>
-    </footer> -->
-
-    <!-- <div class="row footer-content">
-      <div class="col-sm-4">
-        <ul>
-          <h5>About Us</h5>
-          <li><a href="">Developers</a></li>
-          <li><a href="">Contacts</a></li>
-          <li><a href="">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-4">
-        <ul>
-          <h5>Resources</h5>
-          <li><a href="">Blogs</a></li>
-          <li><a href="">News</a></li>
-          <li><a href="">Reviews</a></li>
-          <li><a href="">Guides</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-4">
-        <ul>
-          <h5>Social Media Links</h5>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div> -->
-
-  </div>
-
-  <!--Footer End-->
 
   <!--Bootstrap JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
-
-  <script>
-
-
-    fetch('https://www.freetogame.com/api/games?category=shooter')
-      .then((response) => response.json())
-      .then(data2 => {
-        data2.map(getData => {
-          document.getElementById('detailed').innerHTML +=
-            `
-        <div class="col-md3">
-          <h1>${getData.title}</h1>
-          <p>${getData.short_description}</p>
-          <p>${getData.developer}</p>
-          <img src="${getData.thumbnail}" alt="">
-          <p>${getData.genre} </p>
-        </div>
-
-        `
-        });
-      })
-      .catch(error => console.log(error));
-
-  </script>
 </body>
 
 </html>

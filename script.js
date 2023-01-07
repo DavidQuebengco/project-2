@@ -144,12 +144,14 @@ const selectGenre = (genreChoice) => {
     let sortMinCounter = 0;
     let sortMaxCounter = 11;
     let sortCounter = 0;
+    
     document.getElementById("genreBtn").innerText = genreChoice;
     for (curArr; curArr <= games2.length; curArr++) {
       if (games2[curArr].genre == genreChoice) {
         card2();
         sortCounter += 1;
-        document.getElementById("foundMatch").innerText = `Found ${sortCounter} games for ${genreChoice} Genre`;
+        const plural = sortCounter > 1 ? "games" : "game";
+        document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
       }
     }
   }
