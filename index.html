@@ -33,10 +33,10 @@
     <div class="header">
 
       <!--Nav Bar Start-->
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand fw-bold ms-2" href="index.html">
-            <img src="images/logo.png" width="100" alt="">
+      <nav class="navbar navbar-expand-lg fixed-top border-bottom border-2">
+        <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0">
+          <a class="navbar-brand ms-5 ps-5" href="index.html">
+            <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="150" alt="">
           </a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -48,7 +48,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto me-2">
               <li class="nav-item">
-                <a class="nav-link me-4" href="index.html">Home</a>
+                <a class="nav-link me-4 activePage" href="index.html">Home</a>
               </li>
               <li class="nav-item me-4">
                 <a class="nav-link" href="games.html">Games</a>
@@ -57,10 +57,11 @@
                 <a class="nav-link" href="">Contacts</a>
               </li>
               <li class="nav-item me-4">
-                <a class="nav-link" href="">About</a>
+                <a class="nav-link" href="About.html">About</a>
               </li>
-              <div class="input-group">
-                <input class="form-control" id="searchInput" type="search" placeholder="Search Game">
+              <div class="input-group me-3 ">
+                <input class="form-control bg-transparent text-light" id="searchInput" type="search"
+                  placeholder="Search Game">
                 <button class="btn btn-secondary" id="searchGame" type="submit"><i class='bx bx-search'></i></button>
               </div>
 
@@ -73,15 +74,22 @@
       <!--Nav Bar End-->
 
       <!--Banner Content Start-->
-      <div class="banner-image w-auto vh-100">
-        <div class="row justify-content-end">
-          <div class="col-lg-6">
-            <h3 class="banner-content fw-bold ">
-              See the trending and top GAMES
-            </h3>
-            <p class="banner-desc fw-bold ms-3 me-1">
-              Gaming news, reviews and guides
-            </p>
+      <div class="banner-image w-auto vh-100 ">
+        <div class="row justify-content-end ">
+          <div class="col-lg-10 left vh-100 leftMainPage d-flex justify-content-end">
+            <div class="col-7 text-end pt-5 pe-5">
+              <h3 class="banner-content">
+                See the trending and top GAMES
+              </h3>
+              <small class="banner-desc ms-3 me-1 ">
+                Gaming Trends. <br> Hotest Reviews. <br> Epic Guides, and More
+              </small>
+              <div class="col-12 d-flex justify-content-end ms-3 mt-5">
+                <button type="button" class="btn btn-bg m-5 fw-bold">Featured Games</button>
+                <button type="button" class="btn btn-bg m-5 fw-bold">View All Free Games</button>
+              </div>
+            </div>
+            
           </div>
 
         </div>
@@ -94,32 +102,7 @@
     <!--Header End-->
 
     <!--Trending Games Start-->
-    <div class="trend-section mt-3">
-      <div class="row">
-        <div class="col-lg-6">
-          <span>New Free Games</span>
-          <a class="btn" href="" role="button">See All</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" id="detailed">
-      <h1>INSERT HERE</h1>
-    </div>
-
   </div>
-
-  <figure class="text-center trend-comment">
-    <blockquote class="blockquote">
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A praesentium corporis necessitatibus explicabo
-        doloremque eligendi similique officiis, cumque illum perspiciatis dolores, enim maxime, quisquam nisi
-        perferendis ullam sint quos sed doloribus. Animi, nesciunt qui omnis quia assumenda quisquam, ratione officia
-        iure dolore, nobis incidunt. Beatae dolores voluptates veritatis inventore pariatur.</p>
-    </blockquote>
-    <figcaption class="blockquote-footer">
-      Someone famous in <cite title="Source Title">Source Title</cite>
-    </figcaption>
-  </figure>
   <!--Trending Games End-->
 
   </div>
@@ -127,61 +110,66 @@
 
   <!--Game Ranking Start-->
   <div class="game-rank">
-    <p>Game Rankings</p>
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Rank #</th>
-          <th scope="col">Game Title</th>
-          <th scope="col">Developer</th>
-          <th scope="col">Year Released</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Elden Ring</td>
-          <td>FromSoftware</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>God of War Ragnarok</td>
-          <td>Santamonica Studios</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Stray</td>
-          <td>BlueTwelve Studio</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Marvel Snap</td>
-          <td>Second Dinner</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Pokemon Legends: Arceus</td>
-          <td>Game Freak</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>Splatoon 3</td>
-          <td>Nintendo EPD</td>
-          <td>2022</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1 class="text-center p-5 ms-0 me-0 gameRank2">Game <span class="text-light">Rankings</span>
+      <span class="container"><h5 class="pt-5">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Rank #</th>
+              <th scope="col">Game Title</th>
+              <th scope="col">Developer</th>
+              <th scope="col">Year Released</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Elden Ring</td>
+              <td>FromSoftware</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>God of War Ragnarok</td>
+              <td>Santamonica Studios</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Stray</td>
+              <td>BlueTwelve Studio</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Marvel Snap</td>
+              <td>Second Dinner</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Pokemon Legends: Arceus</td>
+              <td>Game Freak</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Splatoon 3</td>
+              <td>Nintendo EPD</td>
+              <td>2022</td>
+            </tr>
+          </tbody>
+        </table>
+      </h5>
+      </span>
+    </h1>
+    
 
   </div>
   <!--Game Ranking End-->
   <hr>
   <!--Game Dev Logos Start-->
-  <div class="dev-logo d-flex justify-content-around">
+  <div class="dev-logo d-flex justify-content-around bg-light">
     <div class="row align-items-center" style="width: auto;">
       <div class="col-sm">
         <img src="images/activision.png" alt="">
@@ -274,28 +262,6 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 
-  <script>
-
-    fetch('https://www.freetogame.com/api/games?category=shooter')
-      .then((response) => response.json())
-      .then(data2 => {
-        data2.map(getData => {
-          document.getElementById('detailed').innerHTML +=
-            `
-        <div class="col-md3">
-          <h1>${getData.title}</h1>
-          <p>${getData.short_description}</p>
-          <p>${getData.developer}</p>
-          <img src="${getData.thumbnail}" alt="">
-          <p>${getData.genre} </p>
-        </div>
-
-        `
-        });
-      })
-      .catch(error => console.log(error));
-      
-  </script>
 </body>
 
 </html>
