@@ -163,14 +163,6 @@ const selectGenre = (genreChoice) => {
     }
   }
 
-  const searchBar = (searchInput) => {
-    for (curArr; curArr <= games2.length; curArr++) {
-      if (games2[curArr].genre == searchInput) {
-        card2();
-        const plural = sortCounter > 1 ? "games" : "game";
-        document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
-      }
-    }
-  }
+  document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-bottom" href="index.html" onclick="activePage2(Home)">GAMES</a>`
 
 
