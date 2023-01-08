@@ -106,8 +106,8 @@ background-color: chocolate;
   background: linear-gradient(
         120deg,
         rgba(255, 0, 0, 0) 0%,
-        #d1691fb0 15%,
-        #d1691fb0 85%,
+        chocolate 15%,
+        chocolate 85%,
         rgba(255, 0, 0, 0) 100%
   );
 }
@@ -135,6 +135,9 @@ box-shadow:none !important
   background-color:rgb(255, 144, 65);
 }
 
+.socmedIcon:hover{
+  color: chocolate;
+}
 
 .btn-trend:hover, .footer .btn:hover,
 .trend-section a:hover{
