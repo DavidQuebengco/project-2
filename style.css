@@ -111,7 +111,9 @@ background-color: chocolate;
         rgba(255, 0, 0, 0) 100%
   );
 }
-
+a{
+  text-decoration: none !important
+}
 .activePage{
   color: white !important;
   font-weight: 700;
@@ -132,6 +134,7 @@ box-shadow:none !important
 .orangeBg:hover{
   background-color:rgb(255, 144, 65);
 }
+
 
 .btn-trend:hover, .footer .btn:hover,
 .trend-section a:hover{

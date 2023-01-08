@@ -74,7 +74,7 @@ const card2 = () => {
         <small class="card-text">${games2[curArr].short_description}</small><br>                         
         <p class="card-text">Genre: ${games2[curArr].genre}</p>
       </div>
-      <div class="card-footer">
+      <div class="card-footer ">
       <a href="${games2[curArr].freetogame_profile_url}">See more details</a>
       </div>
     </div>
