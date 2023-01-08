@@ -84,8 +84,7 @@ a:hover{
 background-color: chocolate;
 }
 .btn-bg:hover{
-  background-color: white;
-  color: chocolate !important;
+  background-color: rgb(255, 144, 65);
   }
 
 .banner-content{
@@ -119,8 +118,19 @@ background-color: chocolate;
   border-bottom: white !important;
 }
 
+input:focus {
+box-shadow:none !important
+}
+
 .orangeText{
  color: chocolate !important;
+}
+
+.orangeBg{
+  background-color: chocolate;
+}
+.orangeBg:hover{
+  background-color:rgb(255, 144, 65);
 }
 
 .btn-trend:hover, .footer .btn:hover,
