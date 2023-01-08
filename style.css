@@ -97,6 +97,22 @@ background-color: chocolate;
 
 }
 
+.rightcontent{
+  margin-top: 200px;
+}
+
+
+.aboutus{
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.main{
+  background-image: url('https://i.pinimg.com/originals/27/1d/51/271d515589f7b51b33c37044a111b7e6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .secondcontent{
   text-align: justify;
   color: rgb(224, 104, 49);
