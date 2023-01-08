@@ -123,11 +123,3 @@ const prevPage = () => {
   }
 }
 displayGames();
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction(){
-  
-}
