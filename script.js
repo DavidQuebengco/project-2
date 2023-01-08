@@ -36,8 +36,8 @@ async function displayGames() {
           <small class="card-text">${game.short_description}</small><br>
           <p class="card-text">Genre: ${game.genre}</p>
         </div>
-        <div class="card-footer">
-          <a href="${game.freetogame_profile_url}">See more details</a>
+        <div class="card-footer ">
+          <a class="cardLink" href="${game.freetogame_profile_url}">See more details</a>
         </div>
       </div>
     </div>`;
@@ -139,6 +139,13 @@ displayGames();
 const selectGenre = (genreChoice) => {
     document.getElementById("game-output").innerHTML = "";
     
+    document.getElementById("prev").setAttribute(`disabled`, 0);
+    document.getElementById("prevTop").setAttribute(`disabled`, 0);
+    document.getElementById("next").setAttribute(`disabled`, 0);
+    document.getElementById("nextTop").setAttribute(`disabled`, 0);
+    document.getElementById("pageNumber").innerText = `1 of 1`
+    document.getElementById("pageNumberTop").innerText = `1 of 1`
+
     curArr = 0;
     minArr = 0;
     let sortMinCounter = 0;
@@ -156,5 +163,14 @@ const selectGenre = (genreChoice) => {
     }
   }
 
+  const searchBar = (searchInput) => {
+    for (curArr; curArr <= games2.length; curArr++) {
+      if (games2[curArr].genre == searchInput) {
+        card2();
+        const plural = sortCounter > 1 ? "games" : "game";
+        document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
+      }
+    }
+  }
 
 
