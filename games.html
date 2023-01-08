@@ -23,9 +23,12 @@
   <div class="main-wrapper">
     <div class="header">
 
-      <nav class="navbar navbar-expand-lg fixed-top border-bottom2 fw-bold pt-0" id="mainNavbar">
-
-      </nav>
+      <!--Nav Bar Start-->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold ms-5" href="index.html">
+            <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="150" alt="">
+          </a>
 
       <div class="container pt-4">
         <h1 class="orangeText text-center pt-5 m-5 mb-3 text-light fw-bold">
@@ -38,29 +41,46 @@
             data-bs-toggle="dropdown" aria-expanded="false">
             Select Genre
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark" id="sample">
-            <li><a class="dropdown-item" href="games.html">None</a></li>
-          </ul>
-          <h5 id="foundMatch" class=" text-light pt-2 ps-2 col-8"></h5>
-          <div id="page-sectionTop" class="paginationTop d-flex justify-content-center">
-            <button id="prevTop" type="button" class="btn btn-light rounded-0 rounded-start orangeText"
-              onclick="prevPage()"><i class="fa-solid fa-arrow-left"></i></button>
-            <button id="pageNumberTop" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>0 of
-              0</button>
-            <button id="nextTop" type="button" class="btn btn-light rounded-0 rounded-end orangeText"
-              onclick="nextPage()"><i class="fa-solid fa-arrow-right"></i></i></button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto me-2">
+              <li class="nav-item">
+                <a class="nav-link me-4" href="index.html">Home</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link activePage" href="games.html">Games</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link" href="">Contacts</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link" href="About.html">About</a>
+              </li>
+              <div class="input-group me-3">
+                <input class="form-control" id="searchInput" type="search" placeholder="Search Game">
+                <button class="btn btn-secondary" id="searchGame" type="submit"><i class='bx bx-search'></i></button>
+              </div>
+            </ul>
           </div>
         </div>
-
-        <div class="row text-center pt-0 mt-3" id="game-output"></div>
-        <script src="games.js"></script>
-
-        <div id="page-section" class="pagination d-flex justify-content-center m-5">
-          <button id="prev" type="button" class="btn btn-light rounded-0 rounded-start orangeText" onclick="prevPage()">
-            <i class="fa-solid fa-arrow-left"></i></button>
-          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0 " disabled>0 of 0</button>
-          <button id="next" type="button" class="btn btn-light rounded-0 rounded-end orangeText" onclick="nextPage()"><i
-              class="fa-solid fa-arrow-right"></i></button>
+      </nav>
+      <!--Nav Bar End-->
+      <div class="container">
+        <h1 class="text-center pt-5 mt-5 text-light fw-bold">
+          Game List
+        </h1>
+        <div id="page-sectionTop" class="paginationTop d-flex justify-content-center">
+          <button id="prevTop" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
+          <button id="pageNumberTop" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
+          <button id="nextTop" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
+        </div>
+        <div class="row text-center pt-0 mt-3" id="game-output">
+          
+        </div>
+        <div id="page-section" class="pagination d-flex justify-content-center mt-3 mb-3">
+          <button id="prev" type="button" class="btn btn-light rounded-0 rounded-start" onclick="prevPage()"><<</button>
+          <button id="pageNumber" type="button" class="btn btn-secondary fw-bold rounded-0" disabled>.</button>
+          <button id="next" type="button" class="btn btn-light rounded-0 rounded-end" onclick="nextPage()">>></button>
         </div>
       </div>
 
