@@ -127,48 +127,9 @@ background-color: chocolate;
   color: white;
 }
 
-.hr2{
-  height:3px;
-  border-width:0;
-  /* color:chocolate;
-  background-color:chocolate */
-  background: linear-gradient(
-        120deg,
-        rgba(255, 0, 0, 0) 0%,
-        chocolate 15%,
-        chocolate 85%,
-        rgba(255, 0, 0, 0) 100%
-  );
-}
-a{
-  text-decoration: none !important
-} 
 .activePage{
-
   color: white !important;
-}
-
-input:focus {
-box-shadow:none !important
-}
-
-.orangeText{
- color: chocolate !important;
-}
-
-.orangeBg{
-  background-color: chocolate;
-}
-.orangeBg:hover{
-  background-color:rgb(255, 144, 65);
-}
-
-.socmedIcon:hover{
-  color: chocolate;
-}
-
-.mainBg{
-  background: #0C192B;
+  border-bottom: white !important;
 }
 
 .btn-trend:hover, .footer .btn:hover,
