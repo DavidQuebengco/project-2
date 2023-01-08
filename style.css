@@ -139,6 +139,10 @@ box-shadow:none !important
   color: chocolate;
 }
 
+.mainBg{
+  background: #0C192B;
+}
+
 .btn-trend:hover, .footer .btn:hover,
 .trend-section a:hover{
   background-color: rgb(120, 133, 133);
