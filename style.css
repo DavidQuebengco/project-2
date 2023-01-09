@@ -56,7 +56,7 @@ a:hover{
 }
 
 .border-bottom{
-  
+  border-width: 2px;
   border-color: #d1691f !important;
 }
 
