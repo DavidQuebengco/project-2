@@ -79,9 +79,17 @@ img{
 
 /* Banner Content */
 .banner-image {
+  max-height: 85vh;
+  min-height: 85vh;
   background-image: url('images/P2-home-banner.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   animation: change 20s infinite ease-in-out;
+}
+
+.frontHeight{
+  max-height: 85vh;
+  min-height: 85vh;
 }
 
 .btn-bg{
