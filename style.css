@@ -52,37 +52,12 @@ a:hover{
 
 /* Nav Bar */
 .navbar{
-  background: linear-gradient(
-    120deg,
-    #0C192B 0%,
-    #0C192B 20%,
-    #d1691f00 20%,
-    #d1691f00 79%,
-    #0C192B 79%,
-    #0C192B 100%
-);
+  background-color: #0C192B;
 }
+
 .border-bottom{
+  
   border-color: #d1691f !important;
-}
-
-.border-bottom2{
-  border-color: linear-gradient(
-    to the right,
-    #d1691f 90%
-    #d1691f 100%);
-}
-
-.navbar2{
-  background: linear-gradient(
-    to bottom,
-    #0C192B 0%,
-    #0C192B 90%,
-    #0c192b00 90%,
-    #0c192b00 100%
-);
-
-
 }
 
 .border-top{
