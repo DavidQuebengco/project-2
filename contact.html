@@ -31,6 +31,7 @@
 
     <!--CSS Style-->
     <link rel="stylesheet" href="style.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
 
   <body>
@@ -95,42 +96,65 @@
       <!--Header End-->
     </body>
 
-    <div class="container">
-      <form onsubmit="sendEmail(); reset(); return false;">
-        <h2>CONTACT US</h2>
-        <input type="text" id="name" placeholder="Full Name" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="text" id="phone" placeholder="Phone no." required />
-        <textarea
-          id="message"
-          rows="4"
-          placeholder="How can we help you?"
-        ></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+  <!-- contact page -->
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      function sendEmail() {
-        Email.send({
-          Host: "smtp.gmail.com",
-          Username: "danicalibres0726@gmail.com",
-          Password: "forschoolonly",
-          To: "danicalibre6@gmail.com",
-          From: document.getElementById("email").value,
-          Subject: "New Contact Form Enquiry",
-          Body:
-            "Name: " +
-            document.getElementById("name").value +
-            "<br> Email:" +
-            document.getElementById("email").value +
-            "<br> Phone no.:" +
-            document.getElementById("phone").value +
-            "<br> Message:" +
-            document.getElementById("message").value,
-        }).then((message) => alert("Message Sent Succesfully! 👍🏻"));
-      }
-    </script>
+<div class="container-fluid pt-5 mt-5">
+    <section class="contactUS">
+        <h4 class="title text-center fw-bold pb-5">GET IN TOUCH</h4>
+
+        <div class="container">
+            <div class="contact-form row">
+                <div class="text-start">
+                    <form action="" class="form-contact">
+                        <div class="form-floating pb-3">
+                            <input type="text" class="form-control" id="floatingName" placeholder="Name">
+                            <label for="floatingName">NAME</label>
+                        </div>
+                        <div class="form-floating pb-3">
+                            <input type="email" class="form-control" id="floatingEmail" placeholder="Email">
+                            <label for="floatingEmail">EMAIL</label>
+                        </div>
+                        <div class="form-floating pb-3">
+                            <input type="text" class="form-control" id="floatingName" placeholder="Phone No.">
+                            <label for="floatingPhone">PHONE NO.</label>
+                        </div>
+                        <label class="pb-3 fw-bold"style="color: chocolate;" id="message">MESSAGE</label>
+                        <textarea class="form-floating w-100">
+                        </textarea>
+                    <br>
+                    <input type="submit" class="btn btn-outline-info w100 mt-2 fw-bold" style="color: chocolate;">
+                  </form>
+                </div>
+              </div>
+
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+   <script>
+    const name = document.getElementById("floatingName");
+    const email = document.getElementById("floatingEmail");
+    const phone = document.getElementById("floatingPhone");
+    const message = document.getElementById("message");
+
+    const submit = document.getElementsByClassName("form-contact")[0];
+
+    submit.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      console.log("clicked");
+    })
+
+    Email.send({
+    SecureToken : "a4ae41bd-0be8-4fe2-90fd-f560ee20d241",
+    To : 'danicalibres0726@gmail.com',
+    From : "danicalibres0726@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+); -->
+
+
+
+   </script>
+  
   </body>
 </html>
