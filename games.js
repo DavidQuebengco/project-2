@@ -165,4 +165,10 @@ const selectGenre = (genreChoice) => {
 
 document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="games.html">Games</a>`
 
+let loader = document.getElementById("preloader");
+
+window.addEventListener("load", function(){
+    loader.style.display = "none";
+})
+
 
