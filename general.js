@@ -19,7 +19,7 @@ const mainNavbar = () => {
           <a class="nav-link" href="games.html" onclick="activePage2(Games)">GAMES</a>
         </li>
         <li class="nav-item me-5 ms-5 ">
-          <a class="nav-link" href="">CONTACTS</a>
+          <a class="nav-link" href="contact.html">CONTACTS</a>
         </li>
         <li class="nav-item me-5 ms-5" id="About">
           <a class="nav-link" href="About.html" onclick="activePage2(About)">ABOUT</a>
