@@ -18,8 +18,8 @@ const mainNavbar = () => {
           <li class="nav-item me-5 ms-5" id="Games">
             <a class="nav-link aLink" href="games.html">Games</a>
           </li>
-          <li class="nav-item me-5 ms-5 ">
-            <a class="nav-link aLink" href="">Contacts</a>
+          <li class="nav-item me-5 ms-5" id="Contacts">
+            <a class="nav-link aLink" href="contacts.html">Contacts</a>
           </li>
           <li class="nav-item me-5 ms-5" id="About">
             <a class="nav-link aLink" href="About.html">About</a>
