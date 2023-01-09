@@ -1,5 +1,7 @@
 const mainNavbar = () => {
-    document.getElementById("mainNavbar").innerHTML = `<div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0 p-5 ms-5 me-5">
+    document.getElementById("mainNavbar").innerHTML = `
+    <nav class="navbar navbar-expand-lg fixed-top fw-bold pt-0">
+    <div class="container-fluid d-flex justify-content-between pt-0 pb-0 mt-0 p-5 ms-5 me-5">
     <a class="navbar-brand ps-3 pt-2 pb-2" href="index.html">
       <img src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png" width="150" alt="">
     </a>
@@ -8,7 +10,7 @@ const mainNavbar = () => {
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <small class="collapse navbar-collapse navbar2 pt-4 pb-4 mt-0 pe-3" id="navbarSupportedContent">
+    <small class="collapse navbar-collapse navbar2 pt-1 pb-1 mt-0 pe-3" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto me-2">
         <li class="nav-item me-5 ms-5" id="Home">
           <a class="nav-link" href="index.html" onclick="activePage2(Home)">HOME</a>
@@ -23,13 +25,14 @@ const mainNavbar = () => {
           <a class="nav-link" href="About.html" onclick="activePage2(About)">ABOUT</a>
         </li>
         <div class="input-group ms-5">
-          <input class="form-control border-0 bg-light bg-opacity-25 text-light" type="search"
+          <input class="form-control bg-light bg-opacity-25 text-light" type="search"
             placeholder="Search Game">
-          <button class="btn orangeBg text-light border-0" id="searchGame" type="submit"><i class='bx bx-search'></i></button>
+          <button class="btn orangeBg text-light " id="searchGame" type="submit"><i class='bx bx-search'></i></button>
         </div>
       </ul>
     </small>
-  </div>`;
+  </div>
+  </nav>`;
 }
 
 const mainFooter = () => {

@@ -15,7 +15,6 @@ let page = 1; // initialize page to 1
 let gamesPerPage = 12; // number of games to display per page
 let pageCount = 0;
 let curPage = 1;
-console.log(pageCount)
 
 async function getGames(page, gamesPerPage) {
   const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical&page=${page}&gamesPerPage=${gamesPerPage}`, options);
@@ -30,15 +29,15 @@ async function displayGames() {
     if (curArr <= maxArr) {
       const cardSample = `
     <div class="col-3 card-group p-2">
-      <div class="card">
+      <div class="card text-bg-dark shadow">
         <img src=${game.thumbnail} class="card-img-top" alt="...">
         <div class="card-body d-grid">
           <h5 class="card-title fw-bold">${game.title}</h5>
           <small class="card-text">${game.short_description}</small><br>
           <p class="card-text">Genre: ${game.genre}</p>
         </div>
-        <div class="card-footer">
-          <a href="${game.freetogame_profile_url}">See more details</a>
+        <div class="card-footer ">
+          <a class="cardLink" href="${game.freetogame_profile_url}">See more details</a>
         </div>
       </div>
     </div>`;
@@ -53,23 +52,36 @@ async function displayGames() {
   games2 = games;
 }
 
+const genreList = ['ARPG','Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
+  'MOBA', 'Racing', 'Shooter', 'Social', 'Sports', 'Strategy'];
+let genreValue = "";
+
+const genreDropdown = () => {
+  for(let genreNumber = 0; genreNumber < genreList.length ; genreNumber++){
+    genreValue = genreList[genreNumber];
+    document.getElementById('sample').innerHTML += `<li><a class="dropdown-item" onclick="selectGenre('${genreValue}')">${genreValue}</a></li>`;
+  }}
+
+genreDropdown();
+
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `
   <div class="col-3 card-group p-2">
-    <div class="card">
+    <div class="card text-bg-dark shadow">
       <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
       <div class="card-body d-grid">
         <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
         <small class="card-text">${games2[curArr].short_description}</small><br>                         
         <p class="card-text">Genre: ${games2[curArr].genre}</p>
       </div>
-      <div class="card-footer">
+      <div class="card-footer ">
       <a href="${games2[curArr].freetogame_profile_url}">See more details</a>
       </div>
     </div>
   </div>`
 };
-;
+
+
 
 const nextPage = () => {
   scrollToTop()
@@ -123,3 +135,34 @@ const prevPage = () => {
   }
 }
 displayGames();
+
+const selectGenre = (genreChoice) => {
+    document.getElementById("game-output").innerHTML = "";
+    
+    document.getElementById("prev").setAttribute(`disabled`, 0);
+    document.getElementById("prevTop").setAttribute(`disabled`, 0);
+    document.getElementById("next").setAttribute(`disabled`, 0);
+    document.getElementById("nextTop").setAttribute(`disabled`, 0);
+    document.getElementById("pageNumber").innerText = `1 of 1`
+    document.getElementById("pageNumberTop").innerText = `1 of 1`
+
+    curArr = 0;
+    minArr = 0;
+    let sortMinCounter = 0;
+    let sortMaxCounter = 11;
+    let sortCounter = 0;
+    
+    document.getElementById("genreBtn").innerText = genreChoice;
+    for (curArr; curArr <= games2.length; curArr++) {
+      if (games2[curArr].genre == genreChoice) {
+        card2();
+        sortCounter += 1;
+        const plural = sortCounter > 1 ? "games" : "game";
+        document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
+      }
+    }
+  }
+
+document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="index.html" onclick="activePage2(Games)">GAMES</a>`
+
+
