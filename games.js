@@ -37,7 +37,7 @@ async function displayGames() {
           <p class="card-text">Genre: ${game.genre}</p>
         </div>
         <div class="card-footer ">
-          <a class="cardLink" href="${game.freetogame_profile_url}">See more details</a>
+          <a class="cardLink aLink" href="${game.freetogame_profile_url}">See more details</a>
         </div>
       </div>
     </div>`;
@@ -75,7 +75,7 @@ const card2 = () => {
         <p class="card-text">Genre: ${games2[curArr].genre}</p>
       </div>
       <div class="card-footer ">
-      <a href="${games2[curArr].freetogame_profile_url}">See more details</a>
+      <a class="aLink" href="${games2[curArr].freetogame_profile_url}">See more details</a>
       </div>
     </div>
   </div>`
