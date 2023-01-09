@@ -163,6 +163,6 @@ const selectGenre = (genreChoice) => {
     }
   }
 
-document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="index.html" onclick="activePage2(Games)">GAMES</a>`
+document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="games.html">Games</a>`
 
 
