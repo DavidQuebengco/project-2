@@ -24,12 +24,12 @@ img{
 
 
 /* Links */
-a{
+.aLink{
   color: rgb(224, 104, 49);
   transition: all 0.5s ease-in-out;
 }
 
-a:hover{
+.aLink:hover{
   color: #ffffff  !important;
 }
 
@@ -115,7 +115,7 @@ background-color: chocolate;
         rgba(255, 0, 0, 0) 100%
   );
 }
-a{
+.aLink{
   text-decoration: none !important
 } 
 .activePage{
@@ -140,6 +140,7 @@ box-shadow:none !important
 
 .socmedIcon:hover{
   color: chocolate;
+  transition: all 0.3s ease-in-out;
 }
 
 .mainBg{

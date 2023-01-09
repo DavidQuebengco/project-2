@@ -13,16 +13,16 @@ const mainNavbar = () => {
       <small class="collapse navbar-collapse navbar2 pt-1 pb-1 mt-0" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto me-2">
           <li class="nav-item me-5 ms-5" id="Home">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link aLink" href="index.html">Home</a>
           </li>
           <li class="nav-item me-5 ms-5" id="Games">
-            <a class="nav-link" href="games.html">Games</a>
+            <a class="nav-link aLink" href="games.html">Games</a>
           </li>
           <li class="nav-item me-5 ms-5 ">
-            <a class="nav-link" href="">Contacts</a>
+            <a class="nav-link aLink" href="">Contacts</a>
           </li>
           <li class="nav-item me-5 ms-5" id="About">
-            <a class="nav-link" href="About.html">About</a>
+            <a class="nav-link aLink" href="About.html">About</a>
           </li>
           <div class="input-group ms-5">
             <input class="form-control bg-light bg-opacity-25 text-light" type="search"
@@ -86,14 +86,15 @@ const mainFooter = () => {
     <section class=" d-flex pt-3 pb-4 text-light">
       <small class="col-3 me-5">
         GG Next is a brings you the gaming trends, hotest reviews, epic guides which will help you find the best game that fits your interest.
-        <span><a href="About.html">read more..</a></span>
+        <span><a class="aLink" href="About.html">read more..</a></span>
       </small>
       <h3 class="col-3 text-light me-5">
-        <i class="fa-brands fa-facebook pe-3 socmedIcon"></i>
-        <i class="fa-brands fa-twitter pe-3 socmedIcon"></i>
-        <i class="fa-brands fa-youtube pe-3 socmedIcon"></i>
-        <i class="fa-brands fa-discord pe-3 socmedIcon"></i>
-        <i class="fa-brands fa-twitch pe-3 socmedIcon"></i>
+        <a class="text-light" href="https://www.facebook.com/ggnextofficial/"><i class="fa-brands fa-facebook pe-3 socmedIcon"></i></a>
+        <a class="text-light" href="https://twitter.com/GGNextOfficial"><i class="fa-brands fa-twitter pe-3 socmedIcon"></i></a>
+        <a class="text-light" href="https://www.youtube.com/@gg-nextofficial"><i class="fa-brands fa-youtube pe-3 socmedIcon"></i></a>
+        <a class="text-light" href=""><i class="fa-brands fa-discord pe-3 socmedIcon"></i></a>
+        <a class="text-light" href="https://www.twitch.tv/ggnext123"><i class="fa-brands fa-twitch pe-3 socmedIcon"></i></a>
+        
       </h3>
       <small class="col-2 me-5">
         <div class="socmedIcon">- Help</div>
@@ -103,7 +104,7 @@ const mainFooter = () => {
       </small>
       <small class="col-3 me-5">
         GG Next is a free and self-funding website. Every cents are much Appreciated!
-        <span><a href="About.html">Send donation.</a></span>
+        <span><a class="aLink" href="About.html">Send donation.</a></span>
       </small>
     </section>
     </section>
