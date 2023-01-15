@@ -479,3 +479,10 @@ height: 100vh;
     justify-content: center !important;
   }
 }
+
+@media screen and (max-width: 1000px) {
+
+  #videoFrame{
+    justify-content: center !important;
+  }
+}
