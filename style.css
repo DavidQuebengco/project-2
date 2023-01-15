@@ -11,8 +11,9 @@ body{
   /* background: #0C192B; */
   color: #000;
   overflow-x: hidden;
-
+  transition: all 0.5s ease-in-out !important;
 }
+
 
 ul{
   list-style: none;
@@ -36,23 +37,25 @@ img{
 .leftMainPage{
   background-image: url('https://i.pinimg.com/originals/80/ff/69/80ff69f319daa945a850b4efe621c19a.jpg');
     background: linear-gradient(
-        120deg,
-        rgba(255, 0, 0, 0) 0%,
-        rgba(255, 0, 0, 0) 40%,
-        #d1691f57 40%,
-        #d1691f57 45%,
-        rgba(255, 0, 0, 0) 45%,
-        rgba(255, 0, 0, 0) 47%,
-        #d1691fb0 47%,
-        #d1691fb0 55%,
-        #0C192B 55%,
-        #0C192B 100%
+        to right,
+        #d1691f57 0%,
+        #d1691f57 5%,
+        rgba(255, 0, 0, 0) 5%,
+        rgba(255, 0, 0, 0) 10%,
+        #d1691fb0 10%,
+        #d1691fb0 15%,
+        #0c192bc7 15%,
+        #0c192bc7 100%
     )
 }
 
 /* Nav Bar */
 .navbar{
-  background-color: #0C192B;
+  background-color: #0c192bf5;
+}
+
+.blueText{
+    color: #0c192bf5 !important;
 }
 
 .border-bottom{
@@ -61,7 +64,29 @@ img{
 }
 
 .border-top{
+  border-width: 2px;
   border-color: #d1691f !important;
+}
+
+.border-start{
+  border-color: #d1691f !important;
+}
+
+.blueBg{
+  height: 50vh;
+  background: linear-gradient(
+    to bottom,
+    #0c192b00 0%,
+    #0c192b00 80%,
+    #0c192b 80%,
+    #0c192b 98%,
+    #0c192b00 98%,
+    #0c192b00 100%
+  );
+}
+
+.blueBg2{
+  background: #0c192bdc;
 }
 
 .navbar ul li a{
@@ -76,15 +101,100 @@ img{
   text-align: center;
 }
 
+.carousel-indicators2 button{
+  height: 9vh !important;
+  width: 100vw !important;
+  margin-top: 0 5px !important;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-indicators2 button.active{
+  height: 10vh !important;
+  border-color: chocolate !important;
+  border: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+
 
 /* Banner Content */
 .banner-image {
-  max-height: 85vh;
-  min-height: 85vh;
-  background-image: url('images/P2-home-banner.jpg');
+  max-height: 90vh;
+  min-height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: change 20s infinite ease-in-out;
+}
+
+.border-1{
+  border-color: #d1691f !important;
+}
+
+.inputBg{
+  background: rgba(0, 0, 0, 0);
+  border-bottom: chocolate;
+  
+}
+.inputBg:focus {
+  box-shadow:none !important;
+  background: rgba(0, 0, 0, 0);
+}
+
+button:focus{
+  box-shadow:none !important;
+  background: rgba(0, 0, 0, 0);
+}
+
+.btnBg{
+  box-shadow:none !important;
+  background: rgba(0, 0, 0, 0);
+}
+
+.btnTop{
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: #d1691f;
+}
+
+.btnTop:hover{
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: #d1691f;
+}
+
+.border{
+  border-color: #d1691f !important;
+}
+
+.video{
+  position: relative;
+}
+
+.video2{
+  position: absolute;
+}
+
+.btnTop:focus{
+  background: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.searchBtnSize{
+  width: 2vh;
+}
+
+.c-item{
+  height: 90vh;
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.c-item2{
+  transition: all 0.3s ease-in-out;
+}
+
+.c-img{
+ height: 100%;
+ width: 100vw;
+ object-fit: cover;
 }
 
 .frontHeight{
@@ -92,11 +202,27 @@ img{
   min-height: 85vh;
 }
 
+.cardAbout{
+  opacity: 0.25;
+  transition: all 0.3s ease-in-out
+}
+
+.cardAbout:hover{
+  opacity: 1.0 !important;
+  transition: all 0.3s ease-in-out
+} 
+
+.shadow{
+  opacity: 1.0 !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.774)!important;
+  transition: all 0.3s ease-in-out
+} 
+
 .btn-bg{
 background-color: chocolate;
 }
 .btn-bg:hover{
-  background-color: rgb(255, 144, 65);
+  background-color: rgb(255, 144, 65) !important;
   }
 
 .banner-content{
@@ -131,23 +257,48 @@ background-color: chocolate;
   color: white !important;
 }
 
-input:focus {
-box-shadow:none !important
-}
+
 
 .orangeText{
  color: chocolate !important;
 }
 
+.orangeText2{
+  color: chocolate !important;
+  background: linear-gradient(
+    to right,
+    #d1691f00 0%,
+    #d1691f00 73%,
+    #0c192b 73%,
+    #0c192b 100%
+);
+  height: 100vh;
+  width: -250vw;
+  position: sticky;
+  margin-right: 50px;
+  padding-bottom: 200px !important;
+ }
+
+ /* .orangeText2:hover{
+  color: rgb(255, 144, 65) !important;
+ } */
+
+
+
 .orangeBg{
-  background-color: chocolate;
+  background-color: chocolate !important;
 }
 .orangeBg:hover{
-  background-color:rgb(255, 144, 65);
+  background-color:rgb(230, 230, 230);
 }
 
 .socmedIcon:hover{
   color: chocolate;
+  transition: all 0.3s ease-in-out;
+}
+
+.socmedIcon2:hover{
+  color: rgb(255, 137, 52);
   transition: all 0.3s ease-in-out;
 }
 
@@ -195,6 +346,9 @@ box-shadow:none !important
   color: chocolate;
 }
 
+.border-left{
+  border-color: #d1691f !important;
+}
 
 /* Footer Section */
 .footer ul li a, .social-links ul li a{
@@ -214,10 +368,9 @@ box-shadow:none !important
   font-size: 3rem;
 }
 
-#game-output{
-  margin-top: 6rem;
+.searchField{
+  padding-top: 100px !important;
 }
-
 /*contact page*/
 
 .contactUS{
@@ -252,9 +405,6 @@ box-shadow:none !important
   }
 }
 
-
-
-
 /* Media Query */
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
@@ -266,12 +416,7 @@ box-shadow:none !important
 
 }
 
-
-
-
 @media only screen and (max-width: 767px){
-
-
   .banner-image{
     background-image: cover;
     background-repeat: no-repeat;
@@ -289,6 +434,55 @@ box-shadow:none !important
     font-size: 1.3em;
     -webkit-text-stroke-width: 0.4px;
   }
-
 }
 
+.c-btnBg{
+  height: 100vh !important;
+}
+
+.cardImg:hover{
+height: 100vh;
+}
+
+.cardOvrLay{
+  padding-left: 0px;
+  padding-bottom: 0px;
+  height: 316px;
+  padding-left: 0px
+}
+
+.preloader{
+  background: #0C192B url('images/giphy.gif') no-repeat center center;
+  background-size: 10%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100
+}
+
+.preloader2{
+  background: #0C192B url('images/giphy.gif') no-repeat center center;
+  background-size: 10%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100
+}
+
+@media screen and (max-width: 480px) {
+  iframe {
+    width: 320px;
+    height: 180px;
+  }
+
+  #videoFrame{
+    justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  #videoFrame{
+    justify-content: center !important;
+  }
+}

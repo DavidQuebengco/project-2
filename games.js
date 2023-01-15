@@ -25,63 +25,143 @@ async function getGames(page, gamesPerPage) {
 async function displayGames() {
   let games = await getGames(page, gamesPerPage);
   for (const game of games) {
+    document.getElementById("mainGameImg").innerHTML = `
+      <div class="card text-bg-dark rounded-0">
+              <img src="https://news.otakukart.com/wp-content/uploads/2020/04/Dota-2.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
+              <div class="card-img-overlay">
+                <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
+                FEATURED GAMES
+                </small>
+                <div class="">
+                  <a class="cardLink aLink" href="${games[98].freetogame_profile_url}">See more details</a>
+                  <h5 class="card-title pt-5">${games[98].title} </h5>
+                  <p class="card-text">${games[98].short_description}</p>
+                  
+                </div>
+              </div>
+            </div>`;
+
+      document.getElementById("mainGameImg2-1").innerHTML = `
+      <div class="card text-bg-dark rounded-0">
+              <img src="https://wallpapercave.com/wp/wp6012286.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
+              <div class="card-img-overlay">
+                <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
+                FEATURED GAMES
+                </small>
+                <div class="">
+                  <a class="cardLink aLink" href="${games[344].freetogame_profile_url}">See more details</a>
+                  <h5 class="card-title pt-5">${games[344].title} </h5>
+                  <p class="card-text">${games[344].short_description}</p>
+                  
+                </div>
+              </div>
+            </div>`;
+
+      document.getElementById("mainGameImg3-1").innerHTML = `
+      <div class="card text-bg-dark rounded-0">
+              <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd7421a88656e0a28/5fdc56b0b529867fcec246ce/Champions_VGU_2021_Banner.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
+              <div class="card-img-overlay">
+                <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
+                FEATURED GAMES
+                </small>
+                <div class="pt-5">
+                  <h5 class="card-title">${games[189].title} </h5>
+                  <p class="card-text">${games[189].short_description}</p>
+                  <a class="cardLink aLink" href="${games[189].freetogame_profile_url}">See more details</a>
+                </div>
+              </div>
+            </div>`;
+
+    document.getElementById("mainGameImg2").innerHTML = `
+      <div class="card text-bg-dark rounded-0" style="height: 26vh">
+              <img src=${games[248].thumbnail} class="card-img rounded-0" alt="..." style="max-width: 27rem; height: 26vh; object-fit: cover">
+              <div class="card-img-overlay d-flex align-items-end rounded-0">
+                <div>
+                  <a class="cardLink aLink" href="${games[248].freetogame_profile_url}">See more details</a>
+                </div>
+              </div>
+            </div>`;
+
+    document.getElementById("mainGameImg3").innerHTML = `
+            <div class="card text-bg-dark rounded-0" style="height: 26vh">
+                    <img src=${games[57].thumbnail} class="card-img rounded-0" alt="..." style="max-width: 27rem; height: 26vh; object-fit: cover">
+                    <div class="card-img-overlay d-flex align-items-end">
+                    <div>
+                    <a class="cardLink aLink" href="${games[57].freetogame_profile_url}">See more details</a>
+                    </div>
+                  </div>`;
+
     pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : false;
     if (curArr <= maxArr) {
       const cardSample = `
-    <div class="col-3 card-group p-2">
-      <div class="card text-bg-dark shadow">
-        <img src=${game.thumbnail} class="card-img-top" alt="...">
+    <small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
+      <div class="card text-bg-dark shadow rounded-0">
+        <img src=${game.thumbnail} class="card-img-top rounded-0" alt="...">
+        <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
+          <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${game.genre}</small>
+        </div>
         <div class="card-body d-grid">
-          <h5 class="card-title fw-bold">${game.title}</h5>
+          <small class="card-title fw-bold fs-5">${game.title}</small>
+          <small class="card-text mb-4">${game.platform} | ${game.release_date}</small>
           <small class="card-text">${game.short_description}</small><br>
-          <p class="card-text">Genre: ${game.genre}</p>
         </div>
         <div class="card-footer ">
           <a class="cardLink aLink" href="${game.freetogame_profile_url}">See more details</a>
         </div>
       </div>
-    </div>`;
+    </small>`;
+
+    document.getElementById("mainPageNumber").innerHTML = ``;
+    
+
+    for(let pageCounter = 1 ; pageCounter <= pageCount ; pageCounter++){
+      document.getElementById("mainPageNumber").innerHTML += `<li class="page-item orangeText btnBg "><button class="page-link orangeText btnBg" id="page${pageCounter}" onclick="pageNumSelect(${pageCounter})">${pageCounter}</button></li>`;
+      document.getElementById("page1").setAttribute("class", "page-link orangeBg text-light btnBg");
+    }
+
       document.getElementById('game-output').innerHTML += cardSample;
       document.getElementById("prev").setAttribute('disabled', 0);
       document.getElementById("prevTop").setAttribute('disabled', 0);
-      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`;
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`;
       curArr += 1;
     }
+    document.getElementsByClassName("preloader")[0].style.display = "none"
   }
   games2 = games;
+  
 }
 
-const genreList = ['ARPG','Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
+const genreList = ['ARPG', 'Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
   'MOBA', 'Racing', 'Shooter', 'Social', 'Sports', 'Strategy'];
 let genreValue = "";
 
 const genreDropdown = () => {
-  for(let genreNumber = 0; genreNumber < genreList.length ; genreNumber++){
+  for (let genreNumber = 0; genreNumber < genreList.length; genreNumber++) {
     genreValue = genreList[genreNumber];
     document.getElementById('sample').innerHTML += `<li><a class="dropdown-item" onclick="selectGenre('${genreValue}')">${genreValue}</a></li>`;
-  }}
+  }
+}
 
 genreDropdown();
 
 const card2 = () => {
-  document.getElementById('game-output').innerHTML += `
-  <div class="col-3 card-group p-2">
-    <div class="card text-bg-dark shadow">
-      <img src=${games2[curArr].thumbnail} class="card-img-top" alt="...">
-      <div class="card-body d-grid">
-        <h5 class="card-title fw-bold">${games2[curArr].title}</h5>
-        <small class="card-text">${games2[curArr].short_description}</small><br>                         
-        <p class="card-text">Genre: ${games2[curArr].genre}</p>
-      </div>
-      <div class="card-footer ">
-      <a class="aLink" href="${games2[curArr].freetogame_profile_url}">See more details</a>
-      </div>
+  document.getElementById('game-output').innerHTML += `<small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
+  <div class="card text-bg-dark shadow rounded-0" >
+    <img src=${games2[curArr].thumbnail} class="card-img-top rounded-0" alt="...">
+    <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
+      <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${games2[curArr].genre}</small>
     </div>
-  </div>`
+    <div class="card-body d-grid">
+      <small class="card-title fw-bold fs-5">${games2[curArr].title}</small>
+      <small class="card-text mb-4">${games2[curArr].platform} | ${games2[curArr].release_date}</small>
+      <small class="card-text">${games2[curArr].short_description}</small><br>
+    </div>
+    <div class="card-footer ">
+      <a class="cardLink aLink" href="${games2[curArr].freetogame_profile_url}">See more details</a>
+    </div>
+  </div>
+</small>`
 };
-
-
 
 const nextPage = () => {
   scrollToTop()
@@ -89,6 +169,12 @@ const nextPage = () => {
   minArr += 12;
   maxArr += 12;
   curArr = minArr
+
+  let prevPageId = `page${curPage-1}`;
+  let pageId = `page${curPage}`;
+  document.getElementById(pageId).setAttribute("class", "page-link orangeBg text-light btnBg fw-bold");
+  document.getElementById(prevPageId).setAttribute("class", "page-link orangeText btnBg");
+
   document.getElementById("game-output").innerHTML = "";
 
   for (curArr; curArr <= maxArr; curArr++) {
@@ -96,7 +182,6 @@ const nextPage = () => {
       card2();
       document.getElementById("prev").removeAttribute("disabled");
       document.getElementById("prevTop").removeAttribute("disabled");
-      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
     else {
@@ -107,7 +192,7 @@ const nextPage = () => {
 }
 
 function scrollToTop() {
-  window.scrollTo(0, 0);
+  window.scrollTo(500, 500);
 }
 
 const prevPage = () => {
@@ -115,54 +200,100 @@ const prevPage = () => {
   curPage -= 1;
   minArr -= 12;
   maxArr -= 12;
-  curArr = minArr
-  document.getElementById("game-output").innerHTML = "";
+  curArr = minArr;
+
+  let nextPageId = `page${curPage+1}`;
+  let pageId = `page${curPage}`;
+  document.getElementById(pageId).setAttribute("class", "page-link orangeBg text-light btnBg fw-bold");
+  document.getElementById(nextPageId).setAttribute("class", "page-link orangeText btnBg");
+
+  document.getElementById("game-output").innerHTML = ``;
   for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
     if (minArr == 0 && maxArr == 11) {
       card2();
       document.getElementById("prev").setAttribute(`disabled`, 0);
       document.getElementById("prevTop").setAttribute(`disabled`, 0);
-      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
     else {
       card2();
       document.getElementById("next").removeAttribute("disabled");
       document.getElementById("nextTop").removeAttribute("disabled");
-      document.getElementById("pageNumber").innerText = `${curPage} of ${pageCount}`
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
   }
 }
 displayGames();
 
-const selectGenre = (genreChoice) => {
-    document.getElementById("game-output").innerHTML = "";
-    
-    document.getElementById("prev").setAttribute(`disabled`, 0);
-    document.getElementById("prevTop").setAttribute(`disabled`, 0);
-    document.getElementById("next").setAttribute(`disabled`, 0);
-    document.getElementById("nextTop").setAttribute(`disabled`, 0);
-    document.getElementById("pageNumber").innerText = `1 of 1`
-    document.getElementById("pageNumberTop").innerText = `1 of 1`
+// pageNumSelect()
+const pageNumSelect = (pageNum) => {
+  let pageId = `page${pageNum}`;
+  let lastPageID = `page${curPage}`;
+  curPage = pageNum;
+  document.getElementById(lastPageID).setAttribute("class", "page-link orangeText btnBg");
+  document.getElementById(pageId).setAttribute("class", "page-link orangeBg text-light btnBg fw-bold");
 
-    curArr = 0;
-    minArr = 0;
-    let sortMinCounter = 0;
-    let sortMaxCounter = 11;
-    let sortCounter = 0;
-    
-    document.getElementById("genreBtn").innerText = genreChoice;
-    for (curArr; curArr <= games2.length; curArr++) {
-      if (games2[curArr].genre == genreChoice) {
-        card2();
-        sortCounter += 1;
-        const plural = sortCounter > 1 ? "games" : "game";
-        document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
-      }
+  scrollToTop()
+  maxArr = (curPage * 12) -1;
+  minArr = (maxArr - 12) + 1;
+  curArr = (curPage * 12) - 12;
+  
+  console.log(curPage)
+  console.log(curArr);
+  console.log(minArr);
+  console.log(maxArr);
+
+  document.getElementById("game-output").innerHTML = ``;
+  for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
+    if (minArr == 0 && maxArr == 11) {
+      card2();
+      document.getElementById("prev").setAttribute(`disabled`, 0);
+      document.getElementById("prevTop").setAttribute(`disabled`, 0);
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
+    }
+    else {
+      card2();
+      document.getElementById("next").removeAttribute("disabled");
+      document.getElementById("nextTop").removeAttribute("disabled");
+      document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
   }
 
+}
+
+const selectGenre = (genreChoice) => {
+  document.getElementById("game-output").innerHTML = ``;
+
+  document.getElementById("prev").setAttribute(`disabled`, 0);
+  document.getElementById("prevTop").setAttribute(`disabled`, 0);
+  document.getElementById("next").setAttribute(`disabled`, 0);
+  document.getElementById("nextTop").setAttribute(`disabled`, 0);
+  document.getElementById("pageNumberTop").innerText = `1 of 1`
+
+  document.getElementById("mainPageNumber").innerHTML = `<li class="page-item"><button class="page-link orangeBg text-light fw-bold">1</button></li>`
+
+  curArr = 0;
+  minArr = 0;
+  let sortMinCounter = 0;
+  let sortMaxCounter = 11;
+  let sortCounter = 0;
+
+  document.getElementById("genreBtn").innerText = genreChoice;
+  for (curArr; curArr <= games2.length; curArr++) {
+
+    if (games2[curArr].genre == genreChoice) {
+      card2();
+      sortCounter += 1;
+      const plural = sortCounter > 1 ? "games" : "game";
+      document.getElementById("foundMatch").innerHTML = `Found <span class="orangeText">${sortCounter} ${plural}</span> for <span class="orangeText"> ${genreChoice}</span> genre.`;
+    }
+  }
+}
+
 document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="games.html">Games</a>`
+
+
+
+
 
 
