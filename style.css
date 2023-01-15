@@ -183,7 +183,7 @@ button:focus{
 
 .c-item{
   height: 90vh;
-  width: 100vw;
+  
   transition: all 0.3s ease-in-out;
 }
 
@@ -193,6 +193,7 @@ button:focus{
 
 .c-img{
  height: 100%;
+ width: 100vw;
  object-fit: cover;
 }
 
@@ -208,7 +209,6 @@ button:focus{
 
 .cardAbout:hover{
   opacity: 1.0 !important;
-  box-shadow: 0px 0px 5px rgb(255, 255, 255)!important;
   transition: all 0.3s ease-in-out
 } 
 
@@ -467,4 +467,15 @@ height: 100vh;
   width: 100%;
   position: fixed;
   z-index: 100
+}
+
+@media screen and (max-width: 480px) {
+  iframe {
+    width: 320px;
+    height: 180px;
+  }
+
+  #videoFrame{
+    justify-content: center !important;
+  }
 }
