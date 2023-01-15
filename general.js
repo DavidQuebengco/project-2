@@ -39,7 +39,7 @@ const mainNavbar = () => {
           </div>
           <form class="" role="search">
             <a href="/project-2/searchbar.html"><img class="searchBtnSize"
-              src="/project-2/images/search-icon.png" alt="" id="searchBtnSize"></a>
+              src="images/search-icon.png" alt="" id="searchBtnSize"></a>
           </form>
 
         </small>
