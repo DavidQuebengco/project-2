@@ -45,6 +45,7 @@ let dbase = firebase.firestore();
   })
   .then(function(docRef){
     alert ("Successfully submit informations!", docRef.id);
+    window.location.href = "contacts.html";
   })
   .catch(function(error){
     alert ("Error submitting informations!", error);
