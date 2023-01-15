@@ -26,7 +26,7 @@ const mainNavbar = () => {
               <a class="nav-link aLink" href="About.html">About</a>
             </li>
           </ul>
-          <div class="d-flex me-lg-3">
+          <div class="d-flex me-lg-3 justify-content-center">
             <a class="text-light" href="https://www.facebook.com/ggnextofficial/"><i
                 class="fa-brands fa-facebook pe-3 socmedIcon"></i></a>
             <a class="text-light" href="https://twitter.com/GGNextOfficial"><i
@@ -35,7 +35,7 @@ const mainNavbar = () => {
                 class="fa-brands fa-youtube pe-3 socmedIcon"></i></a>
             <a class="text-light" href=""><i class="fa-brands fa-discord pe-3 socmedIcon"></i></a>
             <a class="text-light" href="https://www.twitch.tv/ggnext123"><i
-                class="fa-brands fa-twitch pe-3 socmedIcon"></i></a>
+                class="fa-brands fa-twitch pe-lg-3 socmedIcon"></i></a>
           </div>
           <form class="" role="search">
             <a href="searchbar.html"><img class="searchBtnSize"
