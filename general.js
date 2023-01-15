@@ -38,7 +38,7 @@ const mainNavbar = () => {
                 class="fa-brands fa-twitch pe-3 socmedIcon"></i></a>
           </div>
           <form class="" role="search">
-            <a href="/project-2/searchbar.html"><img class="searchBtnSize"
+            <a href="searchbar.html"><img class="searchBtnSize"
               src="images/search-icon.png" alt="" id="searchBtnSize"></a>
           </form>
 
