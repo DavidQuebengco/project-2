@@ -1,8 +1,16 @@
-let loader = document.getElementsByClassName("preloader2")[0];
+
 
 
 document.getElementById("Home").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="index.html">Home</a>`
-loader.style.display = "none"
+
+let loader = document.getElementsByClassName("preloader2")[0];
+
+const preloader = () => {
+    loader.style.display = "none"
+}
+
+preloader();
+
 const videoFrame = (x) => {
     let x1 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/EE-4GvjKcfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>`
     let x2 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;

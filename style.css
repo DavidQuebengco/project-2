@@ -444,6 +444,13 @@ background-color: chocolate;
 height: 100vh;
 }
 
+.cardOvrLay{
+  padding-left: 0px;
+  padding-bottom: 0px;
+  height: 316px;
+  padding-left: 0px
+}
+
 .preloader{
   background: #0C192B url('images/giphy.gif') no-repeat center center;
   background-size: 10%;
