@@ -2,7 +2,7 @@ document.getElementById("About").innerHTML = `<a class="nav-link activePage bord
 
 
 const david_quebenco = `
-<h2><span class="orangeText">DAVID</span> QUEBENCO</h2>
+<h2><span class="orangeText">DAVID</span> QUEBENGCO</h2>
 <h6>Group Leader</h6>
 <h4 class="pt-5 fst-italic pb-5">
 “Learning to code is useful no matter what your career ambitions are.”  <span class="orangeText"> – Arianna Huffington</span>
