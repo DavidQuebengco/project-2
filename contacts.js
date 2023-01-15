@@ -15,12 +15,27 @@ firebase.initializeApp(firebaseConfig);
 let dbase = firebase.firestore();
 
   let submitBtn = document.getElementById("submitBtn");
+
   submitBtn.addEventListener("click", function(){
 
   let enterName = document.getElementById("enterName").value;
   let enterEmail = document.getElementById("enterEmail").value;
   let enterPhone = document.getElementById("enterPhone").value;
   let enterMessage = document.getElementById("enterMessage").value;
+
+  if (enterName.length == 0){
+    alert ('Name field must be required to fill up!');
+    return false;
+  }
+  if(enterEmail.length == 0){
+    alert ('Email field must be required to fill up!');
+    return false;
+  }
+  if(enterPhone.length == 0){
+    alert ('Phone field must be required to fill up!');
+    return false;
+  }
+  
 
   dbase.collection("NameUser").add({
     Name : enterName,
@@ -35,3 +50,4 @@ let dbase = firebase.firestore();
     alert ("Error submitting informations!", error);
   });
 });
+

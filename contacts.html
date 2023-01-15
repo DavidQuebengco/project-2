@@ -44,21 +44,21 @@
         <div class="text-start">
           <form class="form-contact">
             <div class="form-floating pb-3">
-              <input type="text" class="form-control" id="enterName" placeholder="Name" name="enterName" >
+              <input type="text" class="form-control" id="enterName" placeholder="Name" name="enterName" required >
               <label for="enterName">NAME</label>
             </div>
             <div class="form-floating pb-3">
-              <input type="email" class="form-control" id="enterEmail" placeholder="Email" name="enterEmail" >
+              <input type="email" class="form-control" id="enterEmail" placeholder="Email" name="enterEmail" required >
               <label for="enterEmail">EMAIL</label>
             </div>
             <div class="form-floating pb-3">
-              <input type="text" class="form-control" id="enterPhone" placeholder="Phone No." name="enterPhone" >
+              <input type="text" class="form-control" id="enterPhone" placeholder="Phone No." name="enterPhone" required >
               <label for="enterPhone">PHONE NO.</label>
             </div>
             <label for="enterMessage" class="pb-3 fw-bold" style="color: chocolate;" >MESSAGE</label>
-            <input class="form-floating w-100" id="enterMessage" placeholder="Message here" name="enterMessage"></input>
+            <input class="form-floating w-100" id="enterMessage" placeholder="Message here (Optional)" name="enterMessage"></input>
             <br>
-            <input type="submit" class="btn btn-outline-info w100 mt-2 fw-bold" style="color: chocolate;">
+            <button id="submitBtn" type="button" class="btn btn-outline-info w100 mt-2 fw-bold" style="color: chocolate;">Submit</button>
           </form>
         </div>
       </div>
