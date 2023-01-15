@@ -97,7 +97,7 @@ async function displayGames() {
     <small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
       <div class="card text-bg-dark shadow rounded-0">
         <img src=${game.thumbnail} class="card-img-top rounded-0" alt="...">
-        <div class="card-img-overlay d-flex align-items-start rounded-0" style="padding-left: 0px;">
+        <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
           <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${game.genre}</small>
         </div>
         <div class="card-body d-grid">
@@ -146,9 +146,9 @@ genreDropdown();
 
 const card2 = () => {
   document.getElementById('game-output').innerHTML += `<small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
-  <div class="card text-bg-dark shadow rounded-0">
+  <div class="card text-bg-dark shadow rounded-0" >
     <img src=${games2[curArr].thumbnail} class="card-img-top rounded-0" alt="...">
-    <div class="card-img-overlay d-flex align-items-start rounded-0" style="padding-left: 0px;">
+    <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
       <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${games2[curArr].genre}</small>
     </div>
     <div class="card-body d-grid">
