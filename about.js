@@ -59,26 +59,26 @@ const offHover = (x) => {
     let member = `cardfooter${x}`;
     console.log(member)
     document.getElementById("cardFooter1").innerHTML = `<img src="https://media.tenor.com/pw9ZsUdsEYgAAAAj/capoo-blue-cat.gif" class="img-fluid" alt="...">`;
-    document.getElementById("cardContainer").setAttribute("class","d-flex justify-content-between pt-5 cardContainer");
+    document.getElementById("cardContainer").setAttribute("class","row d-flex justify-content-between pt-5 cardContainer");
     for(let y = 1 ; y <= 5 ; y++){
-        document.getElementById(y).setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg");
+        document.getElementById(y).setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 rounded-0 bg-transparent border-0");
     }
 }
 
 const onHover2 = () => {
-    document.getElementById("1").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg cardAbout");
-    document.getElementById("2").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg cardAbout");
-    document.getElementById("3").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg cardAbout");
-    document.getElementById("4").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg cardAbout");
-    document.getElementById("5").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg cardAbout");
+    document.getElementById("1").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 cardAbout");
+    document.getElementById("2").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 cardAbout");
+    document.getElementById("3").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 cardAbout");
+    document.getElementById("4").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 cardAbout");
+    document.getElementById("5").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0 cardAbout");
 }
 
 const offHover2 = () => {
-    document.getElementById("1").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg");
-    document.getElementById("2").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg");
-    document.getElementById("3").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg");
-    document.getElementById("4").setAttribute("class","col-2 card text-bg-dark rounded-0 orangeBg");
-    document.getElementById("5").setAttribute("class","col-2 card text-bg-dark rounded-0 ");
+    document.getElementById("1").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0");
+    document.getElementById("2").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0");
+    document.getElementById("3").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0");
+    document.getElementById("4").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0");
+    document.getElementById("5").setAttribute("class","col-md-2 card text-bg-dark rounded-0 bg-transparent border-0");
 
 }
 
