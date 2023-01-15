@@ -1,25 +1,16 @@
-let loader = document.getElementById("preloader");
-
-const hello = () => {
-    loader.style.display = "none"
-}
-
-window.addEventListener("load", 
-    function(){
-        setTimeout(hello(), 10000);
-    }
-)
+let loader = document.getElementsByClassName("preloader2")[0];
 
 
 document.getElementById("Home").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="index.html">Home</a>`
-
+loader.style.display = "none"
 const videoFrame = (x) => {
     let x1 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/EE-4GvjKcfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>`
     let x2 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     let x3 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/r72GP1PIZa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     let x4 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     let x5 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kJawWyRUOBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    document.getElementById("videoFrame").innerHTML = `<div class="preloader"></div>`
+    
+    
 
     if(x == 1){
         document.getElementById("videoFrame").innerHTML = x1;
