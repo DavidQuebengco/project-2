@@ -23,15 +23,15 @@ let dbase = firebase.firestore();
   let enterPhone = document.getElementById("enterPhone").value;
   let enterMessage = document.getElementById("enterMessage").value;
 
-  if (enterName.length == 0){
+  if (enterName == ""){
     alert ('Name field must be required to fill up!');
     return false;
   }
-  if(enterEmail.length == 0){
+  if(enterEmail == ""){
     alert ('Email field must be required to fill up!');
     return false;
   }
-  if(enterPhone.length == 0){
+  if(enterPhone == ""){
     alert ('Phone field must be required to fill up!');
     return false;
   }
