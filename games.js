@@ -26,8 +26,8 @@ async function displayGames() {
   let games = await getGames(page, gamesPerPage);
   for (const game of games) {
     document.getElementById("mainGameImg").innerHTML = `
-      <div class="card text-bg-dark rounded-0">
-              <img src="https://news.otakukart.com/wp-content/uploads/2020/04/Dota-2.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
+      <div class="card text-bg-dark rounded-0 imgZoom">
+              <img src="https://news.otakukart.com/wp-content/uploads/2020/04/Dota-2.jpg" class="card-img rounded-0 " alt="Loading..." style="max-width: 54rem; height: 52vh; object-fit: cover">
               <div class="card-img-overlay">
                 <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
                 FEATURED GAMES
@@ -36,13 +36,12 @@ async function displayGames() {
                   <a class="cardLink aLink" href="${games[98].freetogame_profile_url}">See more details</a>
                   <h5 class="card-title pt-5">${games[98].title} </h5>
                   <p class="card-text">${games[98].short_description}</p>
-                  
                 </div>
               </div>
             </div>`;
 
       document.getElementById("mainGameImg2-1").innerHTML = `
-      <div class="card text-bg-dark rounded-0">
+      <div class="card text-bg-dark rounded-0 imgZoom">
               <img src="https://wallpapercave.com/wp/wp6012286.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
               <div class="card-img-overlay">
                 <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
@@ -58,7 +57,7 @@ async function displayGames() {
             </div>`;
 
       document.getElementById("mainGameImg3-1").innerHTML = `
-      <div class="card text-bg-dark rounded-0">
+      <div class="card text-bg-dark rounded-0 imgZoom">
               <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd7421a88656e0a28/5fdc56b0b529867fcec246ce/Champions_VGU_2021_Banner.jpg" class="card-img rounded-0" alt="..." style="max-width: 54rem; height: 52vh; object-fit: cover">
               <div class="card-img-overlay">
                 <small class="fw-bold col-2 text-light orangeBg p-1 text-center ps-3 pe-3 shadow-sm">
@@ -73,17 +72,18 @@ async function displayGames() {
             </div>`;
 
     document.getElementById("mainGameImg2").innerHTML = `
-      <div class="card text-bg-dark rounded-0" style="height: 26vh">
+      <div class="card text-bg-dark rounded-0 imgZoom" style="overflow: hidden;">
               <img src=${games[248].thumbnail} class="card-img rounded-0" alt="..." style="max-width: 27rem; height: 26vh; object-fit: cover">
               <div class="card-img-overlay d-flex align-items-end rounded-0">
                 <div>
                   <a class="cardLink aLink" href="${games[248].freetogame_profile_url}">See more details</a>
+                  
                 </div>
               </div>
             </div>`;
 
     document.getElementById("mainGameImg3").innerHTML = `
-            <div class="card text-bg-dark rounded-0" style="height: 26vh">
+            <div class="card text-bg-dark rounded-0 imgZoom" style="overflow: hidden;">
                     <img src=${games[57].thumbnail} class="card-img rounded-0" alt="..." style="max-width: 27rem; height: 26vh; object-fit: cover">
                     <div class="card-img-overlay d-flex align-items-end">
                     <div>
@@ -93,20 +93,37 @@ async function displayGames() {
 
     pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : false;
     if (curArr <= maxArr) {
-      const cardSample = `
+    
+      console.log(game.platform);
+
+    const icon = () => {
+      if(game.platform == "PC (Windows)"){
+        return `<i class="fa-brands fa-windows"></i>
+        `;
+      }else if(game.platform == "Web Browser"){
+        return `<i class="fa-regular fa-window-maximize"></i>`;
+      }else{
+        return `<i class="fa-brands fa-windows"></i> <i class="fa-regular fa-window-maximize"></i>`;
+      }
+    }
+
+
+    const cardSample = `
     <small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
-      <div class="card text-bg-dark shadow rounded-0">
-        <img src=${game.thumbnail} class="card-img-top rounded-0" alt="...">
-        <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
+      <div class="card text-bg-dark shadow rounded-0 imgZoom" style="overflow: hidden;">
+        <img src=${game.thumbnail} class="card-img-top rounded-0" alt="Loading...">
+        <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay" style="
+        height: 197px;">
           <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${game.genre}</small>
         </div>
         <div class="card-body d-grid">
           <small class="card-title fw-bold fs-5">${game.title}</small>
-          <small class="card-text mb-4">${game.platform} | ${game.release_date}</small>
-          <small class="card-text">${game.short_description}</small><br>
+          <small class="card-text mb-4">${icon()} | ${game.release_date}</small>
+          <small class="card-text">${game.short_description}</small>
         </div>
-        <div class="card-footer ">
+        <div class="card-footer d-flex justify-content-between">
           <a class="cardLink aLink" href="${game.freetogame_profile_url}">See more details</a>
+          <button type="button" class="btn blueBg2 btn-sm text-light rounded-1 border-0" >Free</button>
         </div>
       </div>
     </small>`;
@@ -129,6 +146,7 @@ async function displayGames() {
   }
   games2 = games;
   
+  
 }
 
 const genreList = ['ARPG', 'Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
@@ -145,19 +163,31 @@ const genreDropdown = () => {
 genreDropdown();
 
 const card2 = () => {
+  const icon = () => {
+    if(games2[curArr].platform == "PC (Windows)"){
+      return `<i class="fa-brands fa-windows"></i>
+      `;
+    }else if(games2[curArr].platform == "Web Browser"){
+      return `<i class="fa-regular fa-window-maximize"></i>`;
+    }else{
+      return `<i class="fa-brands fa-windows"></i> <i class="fa-regular fa-window-maximize"></i>`;
+    }
+  }
+
   document.getElementById('game-output').innerHTML += `<small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
-  <div class="card text-bg-dark shadow rounded-0" >
-    <img src=${games2[curArr].thumbnail} class="card-img-top rounded-0" alt="...">
+  <div class="card text-bg-dark shadow rounded-0 imgZoom" style="overflow: hidden">
+    <img src=${games2[curArr].thumbnail} class="card-img-top rounded-0" alt="Loading...">
     <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay">
       <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${games2[curArr].genre}</small>
     </div>
     <div class="card-body d-grid">
-      <small class="card-title fw-bold fs-5">${games2[curArr].title}</small>
-      <small class="card-text mb-4">${games2[curArr].platform} | ${games2[curArr].release_date}</small>
-      <small class="card-text">${games2[curArr].short_description}</small><br>
-    </div>
-    <div class="card-footer ">
+          <small class="card-title fw-bold fs-5">${games2[curArr].title}</small>
+          <small class="card-text mb-4">${icon()} | ${games2[curArr].release_date}</small>
+          <small class="card-text">${games2[curArr].short_description}</small>
+        </div>
+    <div class="card-footer d-flex justify-content-between">
       <a class="cardLink aLink" href="${games2[curArr].freetogame_profile_url}">See more details</a>
+      <button type="button" class="btn blueBg2 btn-sm text-light rounded-1 border-0" >Free</button>
     </div>
   </div>
 </small>`
