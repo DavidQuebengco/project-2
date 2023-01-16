@@ -118,7 +118,7 @@ const mainFooter = () => {
       <div class="col-lg-2 pt-5">
         <div class="orangeText fw-bold">Quick Links</div>
         <small class="text-light d-md-flex d-lg-grid  pt-md-1">
-          <div class="socmedIcon">- Help</div>
+          <div class="socmedIcon">- <a class="aLink" href="contacts.html">Help</a></div>
           <div class="socmedIcon">- FAQ's</div>
           <div class="socmedIcon">- Contact Us</div>
           <div class="socmedIcon">- Privacy Policy</div>
