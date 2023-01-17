@@ -1,3 +1,7 @@
+function scrollToTop() {
+  window.scrollTo(100, 100);
+}
+
 function linkValue(contentId) {
 
     const linkContent1 = `<div class="section container pt-5" id="content2">
@@ -168,5 +172,9 @@ function linkValue(contentId) {
 
     document.getElementById("Contacts").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="contacts.html">Contacts</a>`
     document.getElementById("Home").innerHTML = `<a class="nav-link aLink" href="index.html">Home</a>`
+    
+    scrollToTop()
   }
+
+
 
