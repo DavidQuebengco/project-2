@@ -167,6 +167,6 @@ function linkValue(contentId) {
     } 
 
     document.getElementById("Contacts").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="contacts.html">Contacts</a>`
-    document.getElementById("Home").innerHTML = `<a class="nav-link  border-2 border-bottom" href="index.html">Home</a>`
+    document.getElementById("Home").innerHTML = `<a class="nav-link aLink" href="index.html">Home</a>`
   }
 
