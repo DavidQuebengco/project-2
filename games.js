@@ -175,7 +175,7 @@ const card2 = () => {
 };
 
 const nextPage = () => {
-  scrollToTop()
+  scrollToTopMain()
   curPage += 1;
   minArr += 12;
   maxArr += 12;
@@ -202,12 +202,12 @@ const nextPage = () => {
   }
 }
 
-function scrollToTop() {
+function scrollToTopMain() {
   window.scrollTo(500, 500);
 }
 
 const prevPage = () => {
-  scrollToTop()
+  scrollToTopMain()
   curPage -= 1;
   minArr -= 12;
   maxArr -= 12;
@@ -244,7 +244,7 @@ const pageNumSelect = (pageNum) => {
   document.getElementById(lastPageID).setAttribute("class", "page-link orangeText btnBg");
   document.getElementById(pageId).setAttribute("class", "page-link orangeBg text-light btnBg fw-bold");
 
-  scrollToTop()
+  scrollToTopMain()
   maxArr = (curPage * 12) - 1;
   minArr = (maxArr - 12) + 1;
   curArr = (curPage * 12) - 12;
