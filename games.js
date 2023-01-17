@@ -189,16 +189,17 @@ const nextPage = () => {
   document.getElementById("game-output").innerHTML = "";
 
   for (curArr; curArr <= maxArr; curArr++) {
-    if (curArr <= maxArr && curArr == games2.length - 1) {
+    if (curArr <= maxArr && curArr < games2.length - 1) {
       card2();
-      maxArr = games2.length -1;
-      minArr = games2.length % 12 > 0 ? games2.length - (games2.length % 12) -1 : games2.length - 13;
+
       document.getElementById("prev").removeAttribute("disabled");
       document.getElementById("prevTop").removeAttribute("disabled");
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
     }
     else {
       card2();
+      maxArr = games2.length -1;
+      minArr = games2.length % 12 > 0 ? games2.length - (games2.length % 12) -1 : games2.length - 13;
       document.getElementById("next").setAttribute(`disabled`, 0);
       document.getElementById("nextTop").setAttribute(`disabled`, 0);
     };
