@@ -115,13 +115,13 @@ const mainFooter = () => {
               class="fa-brands fa-twitch socmedIcon"></i></a>
         </h3>
       </div>
-      <div class="col-lg-2 pt-5">
+      <div class="col-lg-2 pt-5" id="container">
         <div class="orangeText fw-bold">Quick Links</div>
         <small class="text-light d-md-flex d-lg-grid  pt-md-1">
-          <div class="socmedIcon">- <a class="aLink" href="contacts.html">Help</a></div>
-          <div class="socmedIcon">- FAQ's</div>
-          <div class="socmedIcon">- Contact Us</div>
-          <div class="socmedIcon">- Privacy Policy</div>
+          <div class="socmedIcon" id="help"><a class="text-white text-decoration-none " onclick="linkValue(1)">-Help</a></div>
+          <div class="socmedIcon" id="faqs"><a class="text-white text-decoration-none" onclick="linkValue(2)">-FAQ's</a></div>
+          <div class="socmedIcon" id="contact"><a class="text-white text-decoration-none" onclick="linkValue(3)">-Contact Us</a></div>
+          <div class="socmedIcon" id="privacy"><a class="text-white text-decoration-none" onclick="linkValue(4)">-Privacy Policy</a></div>
         </small>
       </div>
       <div class="col-lg-3 pt-5">
@@ -131,7 +131,6 @@ const mainFooter = () => {
         </small>
       </div>
     </div>
-
   </div>`;
 }
 
