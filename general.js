@@ -139,6 +139,16 @@ const mainFooter2 = () => {
      Copyright <span class="orangeText">©</span> 2022 All Rights Reserved.</small>`;
 }
 
+setTimeout(myGreeting, 2000);
+
+let loader = document.getElementById("preloaderIndex");
+
+setTimeout(myGreeting, 1000);
+
+function myGreeting() {
+  loader.style.display = "none"
+}
+
 mainNavbar();
 mainFooter();
 mainFooter2()

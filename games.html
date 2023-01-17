@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <div class="preloader">
+  <div id="preloaderIndex">
 
   </div>
   <div class="main-wrapper">
@@ -103,7 +103,7 @@
           <li class="page-item">
             <button class="page-link" onclick="prevPage()" id="prev">Previous</button>
           </li>
-          <li class="row-fluid d-flex page-item" id="mainPageNumber">
+          <li class=" d-flex page-item" id="mainPageNumber">
 
           </li>
           <li class="page-item">
@@ -111,6 +111,8 @@
           </li>
         </ul>
       </nav>
+
+      
 
       <div class="container-fluid bg-opacity-50 pt-5 mt-5" id="mainFooter">
 
@@ -123,6 +125,10 @@
       <script src="games.js"></script>
       <script src="contact2.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      </script>
+    </body>
 
 </html>
