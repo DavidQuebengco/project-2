@@ -125,11 +125,9 @@ async function displayGames() {
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`;
       curArr += 1;
     }
-    document.getElementsByClassName("preloader")[0].style.display = "none"
+    
   }
   games2 = games;
-
-
 }
 
 const genreList = ['ARPG', 'Battle Royale', 'Card Game', 'Fantasy', 'Fighting', 'MMO', 'MMOARPG', 'MMOFPS', 'MMORPG',
@@ -297,6 +295,8 @@ const selectGenre = (genreChoice) => {
     }
   }
 }
+
+
 
 document.getElementById("Games").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="games.html">Games</a>`
 
