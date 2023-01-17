@@ -114,7 +114,7 @@ function linkValue(contentId) {
       <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in GGNext.com. This policy is not applicable to any information collected offline or via channels other than this website.</p>
       
       <h2>Consent</h2>
-      <p>y using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+      <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
     
       <h2>Information We Collect</h2>
       <p>GGNext.com does not sell, exchange, or release your personal information without your consent to any third parties.</p>
