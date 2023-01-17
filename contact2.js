@@ -73,7 +73,7 @@ function linkValue(contentId) {
     </section>
     </div>`;
     const linkContent3 = `<div class="container">
-    <div class="row p-5">
+    <div class="row">
       <div class="col-8 mt-5 pt-5 ps-5">
         <h1 class="fw-bold mb-4" style="color: chocolate;">Note</h1>
         <p class="text-white mb-5">Please note we can't promise to reply to all emails we receive, but we definitely read it all.</p>
