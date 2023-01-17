@@ -1,5 +1,3 @@
-
-
 const mainNavbar = () => {
   document.getElementById("mainNavbar").innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top border-bottom2 fw-bold pt-0" id="mainNavbar2">
@@ -141,8 +139,6 @@ const mainFooter2 = () => {
   document.getElementById("mainFooter2").innerHTML = `<small class="ps-3 text-secondary">
      Copyright <span class="orangeText">©</span> 2022 All Rights Reserved.</small>`;
 }
-
-
 
 mainNavbar();
 mainFooter();
