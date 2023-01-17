@@ -173,7 +173,7 @@ function linkValue(contentId) {
     document.getElementById("Contacts").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="contacts.html">Contacts</a>`
     document.getElementById("Home").innerHTML = `<a class="nav-link aLink" href="index.html">Home</a>`
     document.getElementById("Games").innerHTML = `<a class="nav-link aLink" href="games.html">Games</a>`
-    document.getElementById("About").innerHTML = `<a class="nav-link aLink" href="about.html">About</a>`
+    document.getElementById("About").innerHTML = `<a class="nav-link aLink" href="About.html">About</a>`
     
     scrollToTop()
   }
