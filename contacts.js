@@ -1,4 +1,4 @@
-// document.getElementById("Contacts").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="contacts.html">Contacts</a>`
+document.getElementById("Contacts").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="contacts.html">Contacts</a>`
 
 const firebaseConfig = {
   apiKey: "AIzaSyBqLw4XBhrkF9BG-jJmw__whyZzezF2axc",

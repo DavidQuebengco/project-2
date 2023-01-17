@@ -298,6 +298,12 @@ background-color: chocolate;
   transition: all 0.3s ease-in-out;
 }
 
+.quickLinks:hover {
+  color: chocolate;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
 .socmedIcon2:hover{
   color: rgb(255, 137, 52);
   transition: all 0.3s ease-in-out;
@@ -375,12 +381,11 @@ background-color: chocolate;
 /*contact page*/
 
 .contactUS{
-  max-width: 800px;
-  width: 100%;
+  max-width: 500%;
   margin: 10px auto;
   position: relative;
   box-shadow: 0 10px 30px 0px #264B7E;
-  padding: 30px;
+  padding: 20px;
   }
 
   .contactUS .title{
@@ -389,6 +394,10 @@ background-color: chocolate;
   background-color: chocolate;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  }
+
+  .socmedIcon {
+    cursor: pointer;
   }
 
 @keyframes change{
