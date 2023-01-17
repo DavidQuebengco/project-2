@@ -81,26 +81,82 @@ document.getElementById("gameRankingSec").innerHTML = `
         </table>
       </div>`
 
+// social media embed section
+document.getElementById("embedSec").innerHTML = `
+  <div class="row">
+
+    <div class="col-lg-6 text-center">
+      <div class="d-flex justify-content-center">
+        <blockquote class="twitter-tweet" data-theme="dark">
+          <p lang="en" dir="ltr">Don’t play games with a girl who can play better than you. Want to beat her?
+            GG-Next helps you. <a href="https://t.co/U6O88tQvxX">pic.twitter.com/U6O88tQvxX</a></p>&mdash; GG-Next
+          Official (@GGNextOfficial) <a
+            href="https://twitter.com/GGNextOfficial/status/1614981013012385793?ref_src=twsrc%5Etfw">January 16,
+            2023</a>
+        </blockquote>
+        
+      </div>
+      <div>
+        <iframe class="mt-5"
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fggnextofficial%2Fposts%2Fpfbid02VxBxrYpQVWZDKWpGMFyTj5eqDmb7dRpkEJeHhfD9U6npTbstMNwGMgqm5WX4QXkcl&show_text=false&width=500"
+          width="500" height="260" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-6 text-center">
+      <div class="d-flex justify-content-center">
+        <blockquote class="twitter-tweet" data-theme="dark">
+          <p lang="en" dir="ltr">GG-Next hopes this week is filled with fun times that you can share with friends or
+            loved ones. <a href="https://t.co/1PX3b5YXJl">pic.twitter.com/1PX3b5YXJl</a></p>&mdash; GG-Next Official
+          (@GGNextOfficial) <a
+            href="https://twitter.com/GGNextOfficial/status/1615272850889543680?ref_src=twsrc%5Etfw">January 17,
+            2023</a>
+        </blockquote>
+        
+      </div>
+      <div>
+        <iframe class="mt-5"
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fggnextofficial%2Fposts%2Fpfbid0296UBXbcrwi2nT3gpJ4WWvd8hBd8rXEpqXB3MpsswPiqp4w3ox4BHaU2HYRELW39Ll&show_text=false&width=500"
+          width="500" height="260" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+    </div>
+
+  </div>
+`
+
 document.getElementById("Home").innerHTML = `<a class="nav-link activePage border-2 border-bottom" href="index.html">Home</a>`
 
+let loader = document.getElementsByClassName("preloader2")[0];
+
+const preloader = () => {
+  loader.style.display = "none"
+}
+
+preloader();
 
 const videoFrame = (x) => {
-    let x1 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/EE-4GvjKcfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>`
-    let x2 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    let x3 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/r72GP1PIZa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    let x4 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    let x5 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kJawWyRUOBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  let x1 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/EE-4GvjKcfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>`
+  let x2 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  let x3 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/r72GP1PIZa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  let x4 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K_03kFqWfqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  let x5 = `<iframe class="border blueBg2" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kJawWyRUOBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 
-    if(x == 1){
-        document.getElementById("videoFrame").innerHTML = x1;
-    }else if(x == 2){
-        document.getElementById("videoFrame").innerHTML = x2;
-    }else if(x == 3){
-        document.getElementById("videoFrame").innerHTML = x3;
-    }else if(x == 4){
-        document.getElementById("videoFrame").innerHTML = x4;
-    }else if(x == 5){
-        document.getElementById("videoFrame").innerHTML = x5;
-    }
-  
+
+
+  if (x == 1) {
+    document.getElementById("videoFrame").innerHTML = x1;
+  } else if (x == 2) {
+    document.getElementById("videoFrame").innerHTML = x2;
+  } else if (x == 3) {
+    document.getElementById("videoFrame").innerHTML = x3;
+  } else if (x == 4) {
+    document.getElementById("videoFrame").innerHTML = x4;
+  } else if (x == 5) {
+    document.getElementById("videoFrame").innerHTML = x5;
+  }
+
 }

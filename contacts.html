@@ -16,6 +16,8 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -44,24 +46,23 @@
     <div class="container">
       <div class="contact-form row">
         <div class="text-start">
-          <form action="" class="form-contact">
+          <form class="form-contact">
             <div class="form-floating pb-3">
-              <input type="text" class="form-control" id="floatingName" placeholder="Name">
-              <label for="floatingName">NAME</label>
+              <input type="text" class="form-control" id="enterName" placeholder="Name" name="enterName" required >
+              <label for="enterName">NAME</label>
             </div>
             <div class="form-floating pb-3">
-              <input type="email" class="form-control" id="floatingEmail" placeholder="Email">
-              <label for="floatingEmail">EMAIL</label>
+              <input type="email" class="form-control" id="enterEmail" placeholder="Email" name="enterEmail" required >
+              <label for="enterEmail">EMAIL</label>
             </div>
             <div class="form-floating pb-3">
-              <input type="text" class="form-control" id="floatingName" placeholder="Phone No.">
-              <label for="floatingPhone">PHONE NO.</label>
+              <input type="text" class="form-control" id="enterPhone" placeholder="Phone No." name="enterPhone" required >
+              <label for="enterPhone">PHONE NO.</label>
             </div>
-            <label class="pb-3 fw-bold" style="color: chocolate;" id="message">MESSAGE</label>
-            <textarea class="form-floating w-100">
-                        </textarea>
+            <label for="enterMessage" class="pb-3 fw-bold" style="color: chocolate;" >MESSAGE</label>
+            <input type="text" class="form-control" id="enterMessage" placeholder="Message here (Optional)" name="enterMessage"></input>
             <br>
-            <input type="submit" class="btn btn-bg w100 mt-2 fw-bold text-light">
+            <button id="submitBtn" type="button" class="btn btn-lg mt-2 btn-bg mt-3">Submit</button>
           </form>
         </div>
       </div>
@@ -74,9 +75,8 @@
 <div class="footerCRights d-flex justify-content-center align-items-center p-2" id="mainFooter2">
 
 </div>
-
 <script src="general.js"></script>
-<script src="contacts.js"></script>
+<script type="module" src="contacts.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
