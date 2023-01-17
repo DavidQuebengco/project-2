@@ -191,7 +191,6 @@ const nextPage = () => {
   for (curArr; curArr <= maxArr; curArr++) {
     if (curArr <= maxArr && curArr < games2.length - 1) {
       card2();
-
       document.getElementById("prev").removeAttribute("disabled");
       document.getElementById("prevTop").removeAttribute("disabled");
       document.getElementById("pageNumberTop").innerText = `${curPage} of ${pageCount}`
@@ -211,7 +210,7 @@ function scrollToTopMain() {
 }
 
 const prevPage = () => {
-  scrollToTopMain()
+  scrollToTop()
   curPage -= 1;
   minArr -= 12;
   maxArr -= 12;
@@ -244,11 +243,28 @@ displayGames();
 const pageNumSelect = (pageNum) => {
   let pageId = `page${pageNum}`;
   let lastPageID = `page${curPage}`;
+  
+  if(pageNum > 1 && pageNum < games2.length / 12){
+    
+    document.getElementById("next").removeAttribute("disabled");
+    document.getElementById("nextTop").removeAttribute("disabled");
+    document.getElementById("prev").removeAttribute("disabled");
+    document.getElementById("prevTop").removeAttribute("disabled");
+  }else if(pageNum == 1){
+    
+    document.getElementById("prev").setAttribute(`disabled`, 0);
+    document.getElementById("prevTop").setAttribute(`disabled`, 0);
+  }else{
+    console.log("pageId")
+    document.getElementById("next").setAttribute("disabled", 0);
+    document.getElementById("nextTop").setAttribute("disabled", 0);
+  }
+
   curPage = pageNum;
   document.getElementById(lastPageID).setAttribute("class", "page-link orangeText btnBg");
   document.getElementById(pageId).setAttribute("class", "page-link orangeBg text-light btnBg fw-bold");
 
-  scrollToTopMain()
+  scrollToTop()
   maxArr = (curPage * 12) - 1;
   minArr = (maxArr - 12) + 1;
   curArr = (curPage * 12) - 12;
