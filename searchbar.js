@@ -42,12 +42,13 @@ const searchBtn = () => {
         let inputValueOrg = searchInputValue;
         let inputValue = searchInputValue.toLowerCase().split("");
 
+        
+
         //x assigned for array counter of games (games' value inside games)
-        if(inputValue.length >= 2 && inputValue.length < 25){
-            console.log(searchCounter);
-
+     
+            
             searchCounter == 0 ? document.getElementById("errorCatcher").innerHTML = `<h4 class="orangeText">Sorry! <span class="text-light">Didnt find anything for</span>  "${inputValue.join("")}"</h4>` : ``
-
+            inputValue.length < 2 ? document.getElementById("errorCatcher").innerHTML = `<h4 class="orangeText">**Please enter at least 2 characters!</h4>`: console.log("See");
             for (let x = 0; x <= games.length; x++) {
                 let gameTitle = games[x].title.toLowerCase().split("")
                 for(let inputValueAry = 0; inputValueAry < inputValue.length ; inputValueAry++){
@@ -61,33 +62,58 @@ const searchBtn = () => {
 
                                         const searchCounterPlural = searchCounter > 1 ? "games" : "game";
 
+                                        if(inputValue.length >= 2 && inputValue.length < 25){
+                                            console.log(searchCounter);
+                                
+                                            const icon = () => {
+                                                if (games[x].platform == "PC (Windows)") {
+                                                  return `<i class="fa-brands fa-windows"></i>
+                                                  `;
+                                                } else if (games[x].platform == "Web Browser") {
+                                                  return `<i class="fa-regular fa-window-maximize"></i>`;
+                                                } else {
+                                                  return `<i class="fa-brands fa-windows"></i> <i class="fa-regular fa-window-maximize"></i>`;
+                                                }
+                                              }
+                                            
+
                                         document.getElementById("errorCatcher").innerText = "";
                                         document.getElementById("searchFieldInfo").innerHTML = `<h3 class="text-light">Found <span class="orangeText">${searchCounter}</span> ${searchCounterPlural} for <span class="orangeText">"${searchInputValue}"</span></h3>`;
                                         document.getElementById("searchField").innerHTML += `
-                                        <div class="col-3 card-group p-2">
-                                            <div class="card text-bg-dark shadow">
-                                            <img src=${games[x].thumbnail} class="card-img-top" alt="...">
-                                            <div class="card-body d-grid">
-                                                <h5 class="card-title fw-bold">${games[x].title}</h5>
-                                                <small class="card-text">${games[x].short_description}</small><br>
-                                                <p class="card-text">Genre: ${games[x].genre}</p>
-                                            </div>
-                                            <div class="card-footer ">
+                                        
+                                        <small  class="col-lg-3 col-md-6 card-group p-2 rounded-0 text-start">
+                                            <div class="card text-bg-dark shadow rounded-0 imgZoom" style="overflow: hidden;">
+                                                <img src=${games[x].thumbnail} class="card-img-top rounded-0" alt="Loading...">
+                                                <div class="card-img-overlay d-flex align-items-start rounded-0 cardOvrLay" style="
+                                                height: 197px;">
+                                                <small class="card-text mb-4 orangeBg ps-lg-2 pe-lg-2 p-lg-1 m-0">${games[x].genre}</small>
+                                                </div>
+                                                <div class="card-body d-grid">
+                                                <small class="card-title fw-bold fs-5">${games[x].title}</small>
+                                                <small class="card-text mb-4">${icon()} | ${games[x].release_date}</small>
+                                                <small class="card-text">${games[x].short_description}</small>
+                                                </div>
+                                                <div class="card-footer d-flex justify-content-between align-items-center">
                                                 <a class="cardLink aLink" href="${games[x].freetogame_profile_url}">See more details</a>
+                                                <div class="orangeText text-light rounded-1 border-0 p-lg-1 fw-bold ps-lg-2 pe-lg-2" >Free</div>
+                                                </div>
                                             </div>
-                                            </div>
-                                        </div>`;
+                                        </small>`
+                                        
+                                        
+                                        ;
                                     }
                                                               
                                 }
                             }
                         }
                     }
+                    
             }
         games2 = games;
-        }else{
-            document.getElementById("errorCatcher").innerHTML = `<h4 class="orangeText">**Please enter at least 2 characters!</h4>`;
+        
         }
+        
     }
     displayGames();
 }
