@@ -91,11 +91,8 @@ async function displayGames() {
                     </div>
                   </div>`;
 
-    pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : false;
+    pageCount = games.length % 12 > 1 ? (games.length - games.length % 12) / 12 + 1 : games.length / 12;
     if (curArr <= maxArr) {
-    
-      console.log(game.platform);
-
     const icon = () => {
       if(game.platform == "PC (Windows)"){
         return `<i class="fa-brands fa-windows"></i>
@@ -267,11 +264,6 @@ const pageNumSelect = (pageNum) => {
   maxArr = (curPage * 12) -1;
   minArr = (maxArr - 12) + 1;
   curArr = (curPage * 12) - 12;
-  
-  console.log(curPage)
-  console.log(curArr);
-  console.log(minArr);
-  console.log(maxArr);
 
   document.getElementById("game-output").innerHTML = ``;
   for (curArr; curArr <= maxArr && minArr >= 0; curArr++) {
