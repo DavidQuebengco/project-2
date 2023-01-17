@@ -94,9 +94,3 @@ const searchBtn = () => {
 searchBtn();
 }
 document.getElementById("searchField").innerHTML = "";
-
-let loader = document.getElementById("preloader");
-
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
