@@ -120,7 +120,7 @@ const mainFooter = () => {
         <small class="text-light d-md-flex d-lg-grid  pt-md-1">
           <div class="socmedIcon" id="help"><a class="text-white text-decoration-none " onclick="linkValue(1)">-Help</a></div>
           <div class="socmedIcon" id="faqs"><a class="text-white text-decoration-none" onclick="linkValue(2)">-FAQ's</a></div>
-          <div class="socmedIcon" id="contact"><a class="text-white text-decoration-none" onclick="linkValue(3)">-Contact Us</a></div>
+          <div class="socmedIcon" id="contact"><a class="text-white text-decoration-none" href = "contacts.html">-Contact Us</a></div>
           <div class="socmedIcon" id="privacy"><a class="text-white text-decoration-none" onclick="linkValue(4)">-Privacy Policy</a></div>
         </small>
       </div>
