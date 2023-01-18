@@ -15,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,7 +34,7 @@
 
     <div class="aboutpage">
       <div class="row d-flex justify-content-between col-12">
-        <div class="col-md text-white mt-3 pt-5 pb-5 text-center">
+        <div class="col-md text-white mt-3 pt-5 pb-5 text-center" data-aos="fade-up" data-aos-duration="2000">
           <span><img class="mb-5" src="https://i.ibb.co/4s4480F/GGNext-Logo-white.png?fbclid=IwAR36tsQT-BKK3VMPpHfgWGX6n655UUg_IbhQfxDpNYdOQiogjVq8kO29QjQ" width="500" alt=""></span>
           <h1 class="border-0 border-bottom mt-5">About <span class="orangeText">GG-NEXT</span></h1>
           <small>GG-Next is your one-stop information site that will bring you the most recent news, strategies, and guides about your favorite games. GG-Next also provides information about the top-ranking games so you stay up-to-date  to the trends in the gaming world. GG-Next lets you enjoy browsing and look for new games and also read recent reviews, opinions, comments, and topical discussions from different players that wil give you extra information about any games.</small><br><br>
@@ -42,7 +43,7 @@
       </div>
     </div>
     <section class="row d-flex justify-content-between col-12 mt-5">
-      <div class="col-md-5 text-white mt-3 pt-5 pb-5 text-center">
+      <div class="col-md-5 text-white mt-3 pt-5 pb-5 text-center" data-aos="fade-right" data-aos-duration="2000">
         <span><img class="" src="https://i.ibb.co/Ybyzj0Z/GGNext-Logo-white2.png" width="75" alt=""></span>
         <h1 class="border-0 border-bottom">Our <span class="orangeText">Goal</span></h1>
         <small>GG-Next brings you the gaming trends, hotest reviews, epic guides which will help you find the best
@@ -51,7 +52,7 @@
         <small>This site also provides information and guides about your favorite games that are also shared and
           sourced from top ranking players so you can learn and master them in no time.</small>
       </div>
-      <div class="col-md-5 text-white mt-3 pt-5 pb-5 text-center">
+      <div class="col-md-5 text-white mt-3 pt-5 pb-5 text-center" data-aos="fade-left" data-aos-duration="2000">
         <span><img class="" src="https://i.ibb.co/Ybyzj0Z/GGNext-Logo-white2.png" width="75" alt=""></span>
         <h1 class="border-0 border-bottom">About the <span class="orangeText">Developers</span></h1>
         <small>At GG-Next, we believe that gaming deserves writing that matches its creativity and vitality. We don’t
@@ -63,7 +64,7 @@
     </section>
 
     <section class="d-flex">
-      <div class="col-md-12 text-white mt-5 text-center">
+      <div class="col-md-12 text-white mt-5 text-center"data-aos="fade-up" data-aos-duration="2000">
         <h1 class="border-0 border-bottom pb-3"></h1>
         <div class="row d-flex justify-content-between pt-5 cardContainer" onmouseover="onHover2()" onmouseout="offHover2()" id="cardContainer">
           <div class="col-md-2 card text-bg-dark rounded-0 bg-transparent border-0" onmouseover="onHover(1)" onmouseout="offHover(1)" id="1">
@@ -123,11 +124,17 @@
   <script src="about.js"></script>
   <script src="contact2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   </script>
-  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

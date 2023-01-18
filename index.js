@@ -27,7 +27,7 @@ document.getElementById("carouselSec").innerHTML = `
 
 // game Ranking Section
 document.getElementById("gameRankingSec").innerHTML = `
-<div class="col-12 game-rank">
+<div class="col-12 game-rank" data-aos="fade-up" data-aos-duration="2000">
         <h1 class="text-center pt-4 pb-5 gameRank2 border-top border-2"><span><img class="mb-3"
               src="https://i.ibb.co/Ybyzj0Z/GGNext-Logo-white2.png" width="100" alt=""></span><br>Game <span
             class="text-light">Rankings</span></h1>
@@ -86,7 +86,7 @@ document.getElementById("embedSec").innerHTML = `
   <div class="row">
 
     <div class="col-lg-6 text-center">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="2000">
         <blockquote class="twitter-tweet" data-theme="dark">
           <p lang="en" dir="ltr">Don’t play games with a girl who can play better than you. Want to beat her?
             GG-Next helps you. <a href="https://t.co/U6O88tQvxX">pic.twitter.com/U6O88tQvxX</a></p>&mdash; GG-Next
@@ -96,7 +96,7 @@ document.getElementById("embedSec").innerHTML = `
         </blockquote>
         
       </div>
-      <div>
+      <div data-aos="fade-right" data-aos-duration="2000">
         <iframe class="mt-5"
           src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fggnextofficial%2Fposts%2Fpfbid02VxBxrYpQVWZDKWpGMFyTj5eqDmb7dRpkEJeHhfD9U6npTbstMNwGMgqm5WX4QXkcl&show_text=false&width=500"
           width="500" height="260" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
@@ -106,7 +106,7 @@ document.getElementById("embedSec").innerHTML = `
     </div>
 
     <div class="col-lg-6 text-center">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" data-aos="fade-left" data-aos-duration="2000">
         <blockquote class="twitter-tweet" data-theme="dark">
           <p lang="en" dir="ltr">GG-Next hopes this week is filled with fun times that you can share with friends or
             loved ones. <a href="https://t.co/1PX3b5YXJl">pic.twitter.com/1PX3b5YXJl</a></p>&mdash; GG-Next Official
@@ -116,7 +116,7 @@ document.getElementById("embedSec").innerHTML = `
         </blockquote>
         
       </div>
-      <div>
+      <div data-aos="fade-left" data-aos-duration="2000">
         <iframe class="mt-5"
           src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fggnextofficial%2Fposts%2Fpfbid0296UBXbcrwi2nT3gpJ4WWvd8hBd8rXEpqXB3MpsswPiqp4w3ox4BHaU2HYRELW39Ll&show_text=false&width=500"
           width="500" height="260" style="border:none;overflow:hidden" scrolling="no" frameborder="0"

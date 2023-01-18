@@ -15,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,91 +29,91 @@
       <nav id="mainNavbar">
 
       </nav>>
-      
+
       <div id="quickLinks">
-      
-      <div class="container pt-4 mt-5">
-        <div class="d-lg-flex mb-5 bg-opacity-0">
-          <div id="carouselExampleSlidesOnly" class="carousel slide col-lg-8 m-1" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+
+        <div class="container pt-4 mt-5">
+          <div class="d-lg-flex mb-5 bg-opacity-0">
+            <div id="carouselExampleSlidesOnly" class="carousel slide col-lg-8 m-1" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item c-item2 active" id="mainGameImg" data-bs-interval="3000">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item c-item2" id="mainGameImg2-1" data-bs-interval="3000">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item c-item2" id="mainGameImg3-1" data-bs-interval="3000">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div>
+              </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item c-item2 active" id="mainGameImg" data-bs-interval="3000">
-                <img src="..." class="d-block w-100" alt="...">
+            <div class="d-lg-grid d-md-flex col-lg-4 bg-opacity-0 m-1">
+              <div class="card text-bg-dark rounded-0" id="mainGameImg2">
+
               </div>
-              <div class="carousel-item c-item2" id="mainGameImg2-1" data-bs-interval="3000">
-                <img src="..." class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item c-item2" id="mainGameImg3-1" data-bs-interval="3000">
-                <img src="..." class="d-block w-100" alt="...">
+
+              <div class="card text-bg-dark bg-opacity-0 rounded-0" id="mainGameImg3">
               </div>
             </div>
           </div>
-          <div class="d-lg-grid d-md-flex col-lg-4 bg-opacity-0 m-1">
-            <div class="card text-bg-dark rounded-0" id="mainGameImg2">
 
-            </div>
+          <div class="dropdown d-flex justify-content-between pt-2">
+            <div class="col-6 d-flex">
+              <button id="genreBtn"
+                class="btn text-light rounded-0 border-0 border-bottom bg-opacity-0 dropdown-toggle fw-bold ps-4 pe-4"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="">
+                Select Genre
+              </button>
 
-            <div class="card text-bg-dark bg-opacity-0 rounded-0" id="mainGameImg3">
-            </div>
-          </div>
-        </div>
-
-        <div class="dropdown d-flex justify-content-between pt-2">
-          <div class="col-6 d-flex">
-            <button id="genreBtn"
-              class="btn text-light rounded-0 border-0 border-bottom bg-opacity-0 dropdown-toggle fw-bold ps-4 pe-4"
-              type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="">
-              Select Genre
-            </button>
-
-            <ul class="dropdown-menu dropdown-menu-dark text-center rounded-0 " id="sample">
-              <li><a class="dropdown-item " href="games.html">None</a></li>
-            </ul>
-            <h5 id="foundMatch" class="fw-bold text-light pt-2 "></h5>
-          </div>
-          <div class="d-flex align-items-end">
-            <nav aria-label="col-6 Page navigation example" class="">
-              <ul class="pagination pagination-sm">
-                <li class="page-item">
-                  <button class="page-link btnTop border-0 border-bottom rounded-0 fw-bold" onclick="prevPage()"
-                    id="prevTop">Prev</button>
-                </li class="">
-                <li class=" page-item d-flex">
-                  <button id="pageNumberTop" class="page-link fw-bold btnTop border-0 border-bottom rounded-0"
-                    disabled>0 of 0</button>
-                </li>
-                <li class="page-item">
-                  <button class="page-link btnTop border-0 border-bottom rounded-0 fw-bold" onclick="nextPage()"
-                    id="nextTop">Next</button>
-                </li>
+              <ul class="dropdown-menu dropdown-menu-dark text-center rounded-0 " id="sample">
+                <li><a class="dropdown-item " href="games.html">None</a></li>
               </ul>
-            </nav>
+              <h5 id="foundMatch" class="fw-bold text-light pt-2 "></h5>
+            </div>
+            <div class="d-flex align-items-end">
+              <nav aria-label="col-6 Page navigation example" class="">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <button class="page-link btnTop border-0 border-bottom rounded-0 fw-bold" onclick="prevPage()"
+                      id="prevTop">Prev</button>
+                  </li class="">
+                  <li class=" page-item d-flex">
+                    <button id="pageNumberTop" class="page-link fw-bold btnTop border-0 border-bottom rounded-0"
+                      disabled>0 of 0</button>
+                  </li>
+                  <li class="page-item">
+                    <button class="page-link btnTop border-0 border-bottom rounded-0 fw-bold" onclick="nextPage()"
+                      id="nextTop">Next</button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
           <div class="row text-center pt-0 mt-3 justify-content-center" id="game-output">
 
           </div>
-      </div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination pagination-sm justify-content-center pt-5">
-          <li class="page-item">
-            <button class="page-link" onclick="prevPage()" id="prev">Previous</button>
-          </li>
-          <li class=" d-flex page-item" id="mainPageNumber">
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-sm justify-content-center pt-5">
+            <li class="page-item">
+              <button class="page-link" onclick="prevPage()" id="prev">Previous</button>
+            </li>
+            <li class=" d-flex page-item" id="mainPageNumber">
 
-          </li>
-          <li class="page-item">
-            <button class="page-link" onclick="nextPage()" id="next">Next</button>
-          </li>
-        </ul>
-      </nav>
+            </li>
+            <li class="page-item">
+              <button class="page-link" onclick="nextPage()" id="next">Next</button>
+            </li>
+          </ul>
+        </nav>
 
       </div>
 
@@ -122,6 +123,7 @@
       <div class="footerCRights d-flex justify-content-center align-items-center p-2" id="mainFooter2">
 
       </div>
+ 
 
       <script src="general.js"></script>
       <script src="games.js"></script>
@@ -129,8 +131,9 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
       <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
       </script>
-    </body>
+      >
+</body>
 
 </html>
