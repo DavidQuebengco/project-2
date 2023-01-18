@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,50 +34,39 @@
       <!--Nav Bar End-->
     </div>
     <!--Header End-->
-</body>
+
 
 <!-- contact page -->
 
-
 <div class="section container pt-5" id="quickLinks">
-  <div class="row">
-    <div class="col-md-8 mt-5 pt-5 ps-5" data-aos="fade-right" data-aos-duration="2000">
-      <h1 class="fw-bold mb-4" style="color: chocolate;">Note</h1>
-      <p class="text-white mb-5">Please note we can't promise to reply to all emails we receive, but we definitely read it all.</p>
-      <h1 class="fw-bold mb-4" style="color: chocolate;">Contact</h1>
-      <p class="text-white mb-5">+63 981 480 4633</p>
-      <h1 class="fw-bold mb-4" style="color: chocolate;">Email</h1>
-      <p class="text-white mb-5">contact@ggnext.com</p>
-    </div>
-    
-    <div class="col-md-4 contactUS mt-5" id="content1" data-aos="fade-left" data-aos-duration="2000">
-      <h4 class="title text-center fw-bold pb-5 mt-5">GET IN TOUCH</h4>
-      <div class="container">
-        <div class="contact-form row">
-          <div class="text-start">
-            <form action="" class="form-contact">
-              <div class="form-floating pb-3">
-                <input type="text" class="form-control" id="floatingName" placeholder="Name">
-                <label for="floatingName">Name</label>
-              </div>
-              <div class="form-floating pb-3">
-                <input type="email" class="form-control" id="floatingEmail" placeholder="Email">
-                <label for="floatingEmail">Email</label>
-              </div>
-              <div class="form-floating pb-3">
-                <input type="text" class="form-control" id="floatingName" placeholder="Phone No.">
-                <label for="floatingPhone">Phone no.</label>
-              </div>
-              <label class="pb-3 fw-bold for" style="color: chocolate;" id="message">MESSAGE</label>
-              <textarea class="form-floating w-100"></textarea>
-              <br>
-              <input type="submit" class="btn btn-bg w100 mt-2 fw-bold text-light">
-            </form>
-          </div>
+  <div class="container-fluid pt-5 mt-5">
+  <section class="contactUS">
+    <h4 class="title text-center fw-bold pb-5">GET IN TOUCH</h4>
+    <div class="container">
+      <div class="contact-form row">
+        <div class="text-start">
+          <form class="form-contact">
+            <div class="form-floating pb-3">
+              <input type="text" class="form-control" id="enterName" placeholder="Name" name="enterName" required >
+              <label for="enterName">NAME</label>
+            </div>
+            <div class="form-floating pb-3">
+              <input type="email" class="form-control" id="enterEmail" placeholder="Email" name="enterEmail" required >
+              <label for="enterEmail">EMAIL</label>
+            </div>
+            <div class="form-floating pb-3">
+              <input type="text" class="form-control" id="enterPhone" placeholder="Phone No." name="enterPhone" required >
+              <label for="enterPhone">PHONE NO.</label>
+            </div>
+            <label for="enterMessage" class="pb-3 fw-bold" style="color: chocolate;" >MESSAGE</label>
+            <input type="text" class="form-control" id="enterMessage" placeholder="Message here (Optional)" name="enterMessage"></input>
+            <br>
+            <button id="submitBtn" type="button" class="btn btn-lg mt-2 btn-bg mt-3">Submit</button>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+</div>
 </div>
 
 
